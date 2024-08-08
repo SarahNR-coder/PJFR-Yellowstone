@@ -1,15 +1,101 @@
+@font-face{
+    font-family:'Reddit Mono';
+    src: url('./Polices/Reddit_Mono/static/RedditMono-Medium.ttf')
+}
+
+@font-face{
+    font-family: 'Arial';
+    src:url('./Polices/Arial-font/arial_mt_black/ARIBL0.ttf')
+}
+
+h1{
+    font-size: 64px;
+}
+
+#logo{
+    height:55px;
+    padding: 0px;
+    margin:10px 0px 2px 0px;
+}
+
+.navigationMenu{
+    background-color: #4B4F40;
+    font-family: Arial, sans-serif;
+}
+
 .navigationMenu ol{
     list-style-type: none;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 30px 0px 12px;
 }
 
 .toPage{
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
 }
+
+.toPage a{
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    color: white;
+}
+
+
+.toPage a span{
+    display: block;
+    margin: 30px 0px  10px 0px;
+}
+
 
 div.imageInBg{
     background-image: url("img/home-grand-prismatic-spring.jpg");
+    height: 50vw;
+    display: flex;
+    margin: 50px 35px;
 }
 
-div.textOverImg{
-    background-color: rgba(217, 217, 217, 0.7);
+div.textOverImage{
+    background-color: rgba(217, 217, 217, 0.6);
+    text-align: center;
+    margin: auto;
+    padding : 30px 100px;
+    font-size: 50px;
+    font-family: 'Reddit Mono', sans-serif;
+    font-weight: bold;
+}
+
+
+div.pageTeaser{
+    display: flex;
+    flex-direction: row;
+    flex-wrap : wrap;
+    margin: 0px 20px;
+}
+
+h2{
+    font-family: 'Reddit Mono', 'sans-serif';
+}
+
+div.imageBox{
+    background-color: #C7C7E6;
+    height: 150px;
+    width:250px;
+    display: flex;
+    border: solid black 2px;
+}
+
+div.imageBox img{
+    height:100%;
+    width: auto;
+    margin: 0px auto;
+}
+
+div.textBox{
+    text-wrap: wrap;
 }
