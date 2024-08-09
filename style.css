@@ -70,32 +70,47 @@ div.textOverImage{
     font-weight: bold;
 }
 
+div.pagesMenu{
+    display:flex;
+    flex-wrap: wrap;
+}
 
 div.pageTeaser{
     display: flex;
     flex-direction: row;
-    flex-wrap : wrap;
-    margin: 0px 20px;
+    margin: 30px 40px;
+    width: 43%;
+
 }
 
 h2{
     font-family: 'Reddit Mono', 'sans-serif';
+    margin: 0px 0px 10px 0px;
+    text-align: justify;
 }
 
-div.imageBox{
-    background-color: #C7C7E6;
+
+div.imageBox img{
     height: 150px;
-    width:250px;
-    display: flex;
+    width: 200px;
+    margin: 0px auto;
+    object-fit: cover;
+    background-color: #C7C7E6;
     border: solid black 2px;
 }
 
-div.imageBox img{
-    height:100%;
-    width: auto;
-    margin: 0px auto;
+div.background img{
+    background-color: #C7C7E6;
+    object-fit: contain;
 }
+
 
 div.textBox{
     text-wrap: wrap;
+    margin-left: 30px;
+}
+
+div.textBox p{
+    margin: 0px;
+    text-align: justify;
 }
