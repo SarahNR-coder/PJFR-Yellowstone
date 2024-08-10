@@ -8,10 +8,16 @@
     src:url('./Polices/Arial-font/arial_mt_black/ARIBL0.ttf')
 }
 
+body{
+    margin: 0px;
+}
+
+
 h1{
     font-size: 64px;
 }
 
+/* HEADER */
 #logo{
     height:55px;
     padding: 0px;
@@ -25,11 +31,12 @@ h1{
 
 .navigationMenu ol{
     list-style-type: none;
-    margin-top: 5px;
+    margin-top: 0px;
     display: flex;
     justify-content: space-between;
     padding: 0px 30px 0px 12px;
 }
+
 
 .toPage{
     display: flex;
@@ -52,15 +59,17 @@ h1{
     margin: 30px 0px  10px 0px;
 }
 
+/* MAIN */
 
-div.imageInBg{
+/*Bandeau*/
+.imageInBg{
     background-image: url("img/home-grand-prismatic-spring.jpg");
     height: 50vw;
     display: flex;
     margin: 50px 35px;
 }
 
-div.textOverImage{
+.textOverImage{
     background-color: rgba(217, 217, 217, 0.6);
     text-align: center;
     margin: auto;
@@ -70,12 +79,13 @@ div.textOverImage{
     font-weight: bold;
 }
 
-div.pagesMenu{
+/*Menu*/
+.pagesMenu{
     display:flex;
     flex-wrap: wrap;
 }
 
-div.pageTeaser{
+.pageTeaser{
     display: flex;
     flex-direction: row;
     margin: 30px 40px;
@@ -90,7 +100,7 @@ h2{
 }
 
 
-div.imageBox img{
+.imageBox img{
     height: 150px;
     width: 200px;
     margin: 0px auto;
@@ -99,18 +109,143 @@ div.imageBox img{
     border: solid black 2px;
 }
 
-div.background img{
+.background img{
     background-color: #C7C7E6;
     object-fit: contain;
 }
 
 
-div.textBox{
+.textBox{
     text-wrap: wrap;
     margin-left: 30px;
 }
 
-div.textBox p{
+.textBox p{
     margin: 0px;
     text-align: justify;
+}
+
+/*Responsive*/
+@media screen and (max-width: 1143px){
+    /*Bandeau*/
+    /*Menu*/
+    .pagesMenu{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width:100%;
+        margin: 40px;
+    }
+    .pageTeaser{
+        width: 70%;
+    }
+    .odd{
+        background-color: #8D7C7F;
+        align-self: self-start;
+    }
+    .even{
+        background-color: #9FA290;
+        align-self: self-end;
+    }
+    h2{
+        margin: 15px 0px 12px 0px;
+    }
+    .imageBox{
+        padding : 0px;
+    }
+    .textBox{
+        padding : 0px 20px;
+    }
+
+}
+
+@media screen and (max-width: 980px){
+    /*Bandeau*/
+    h1{
+        font-size: 48px;
+    }
+    .imageInBg{
+        background-image: url('img/home-grand-prismatic-spring-smaller25.jpg');
+    }
+    /*Menu*/
+    .odd{
+        flex-direction : column;
+    }
+    .even{
+        flex-direction: column-reverse;
+    }
+    .pageTeaser{
+        width: 45vw;
+    }
+    .imageBox{
+        width:44,5vw;
+        height:30vw;
+        border: solid black 2px;
+    }
+    .pageTeaser .imageBox img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border : none;
+    }
+
+    .pageTeaserBg .imageBox{
+        background-color: #C7C7E6;
+        display : flex;
+    }
+    .pageTeaserBg .imageBox img{
+        width: auto;
+        object-fit: contain;
+        margin : 0px auto;
+    }
+
+    .textBox{
+        margin: 25px;
+    }
+}
+
+@media screen and (max-width: 680px){
+    /*Bandeau*/
+    h1{
+        font-size: 36px;
+    }
+    .imageInBg{
+        background-image: url('img/home-grand-prismatic-spring-smaller50.jpg');
+    }
+    /*Menu*/
+    .pagesMenu{
+        margin:0%;
+    }
+    .pageTeaser{
+        width:80vw;
+    }
+    .odd{
+        align-self: center;
+    }
+    .even{
+        align-self: center;
+    }
+}
+
+@media screen and (max-width: 480px){
+
+}
+/*FOOTER*/
+footer{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+footer{
+    background-color: #4B4F40;
+    font-family: Arial, sans-serif;
+    height: 50px;   
+}
+
+footer a{
+    display: block;
+    width: 150px;
+    text-decoration: none;
+    color: white; 
+    padding: auto 10px;
 }
