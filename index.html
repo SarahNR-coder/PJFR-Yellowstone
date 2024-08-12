@@ -5,19 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b8fdfe5bf9.js" crossorigin="anonymous"></script>
+   <script src="main.js" defer></script>
 </head>
 <body>
     <header>
         <nav class="navigationMenu">
             <ol>
-                <li class="toPage"><a href="#"><img id="logo" src="img/logobison.png" alt="Logo du site figurant un bison"></a></li>
+                <li class="toPage logo"><a href="#" class="active"><img id="logo" src="img/logobison.png" alt="Logo du site figurant un bison"></a></li>
                 <li class="toPage"><a href="#"><span>A propos</span></a></li>
                 <li class="toPage"><a href="#"><span>Venir au parc</span></a></li>
-                <li class="toPage"><a href=#><span>La nature à Yellowstone</span></a></li>
+                <li class="toPage"><a href="#"><span>La nature à Yellowstone</span></a></li>
                 <li class="toPage"><a href="#"><span>Activités</span></a></li>
                 <li class="toPage"><a href="#"><span>Connexion</span></a></li>
                 <li class="toPage"><a href="#"><span>Inscription</span></a></li>
             </ol>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <!-- <i class="fa fa-bars"></i> -->
+                <img class="imgHamburgerMenu" src="icones/header/bars-solid.svg" alt="Menu Hamburger responsive">
+            </a>
           </nav>
     </header>
     <main>
@@ -27,7 +33,7 @@
             </div>
         </div>
         <div class="pagesMenu">
-            <div class="pageTeaser  odd pageTeaserBg">
+            <div class="pageTeaser  odd pageTeaserBg first">
                 <div class="imageBox background">
                     <img src="img/home-symbole-NPS.png" alt="Pointe de flèche, le symbole du National Park Service">
                 </div>
@@ -78,7 +84,7 @@
                 </div>
                 <div class="textBox">
                     <h2>Votre espace personnel</h2>
-                    <p>L’endroit du site qui vous est réservé. Vous y trouverez vos informations, vos achats passéset toute votre activité : les notes et les commentaires.</p>
+                    <p>L’endroit du site qui vous est réservé. Vous y trouverez vos informations, vos achats passés et toute votre activité : les notes et les commentaires.</p>
                 </div>
             </div>
         </div>
