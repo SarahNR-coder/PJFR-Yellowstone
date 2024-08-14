@@ -1,8 +1,8 @@
 function myFunction() {
-    var x = document.getElementById("myLinks");
-    if (x.style.display === "block") {
-      x.style.display = "none";
+    var toPageHtmlElement = document.querySelector(".toPage");
+    if (toPageHtmlElement.style.display === "block") {
+      toPageHtmlElement.style.display = "none";
     } else {
-      x.style.display = "block";
+      toPageHtmlElement.style.display = "block";
     }
   }
