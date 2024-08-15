@@ -18,6 +18,10 @@ header{
     margin:10px 0px 2px 0px;
 }
 
+#logo:hover{
+    scale:1.2;
+}
+
 .navigationMenu{
     background-color: #4B4F40;
     font-family: Arial, sans-serif;
@@ -28,7 +32,7 @@ header{
     margin-top: 0px;
     display: flex;
     justify-content: space-between;
-    padding: 0px 30px 0px 12px;
+    padding: 0px 12px 0px 12px;
 }
 
 .navigationMenu a.icon{
@@ -50,6 +54,9 @@ header{
     text-decoration: none;
     color: white;
     
+}
+.toPage a:hover{
+    text-decoration: underline;
 }
 
 .logo{
@@ -87,7 +94,6 @@ header{
 .pagesMenu{
     display:flex;
     flex-wrap: wrap;
-    margin: 30px;
     /*modif dessous*/
     justify-content: space-between;
 }
@@ -103,11 +109,20 @@ header{
 h2{
     font-family: 'Reddit Mono', 'sans-serif';
     margin: 0px 0px 10px 0px;
-
+    color: black;
 }
 
+h2:hover{
+    font-size: 1.6em;
+}
 
-.imageBox img{
+.imageBox a{
+    display: flex;
+    width:100%;
+    height: 100%;
+}
+
+.imageBox a img{
     height: 150px;
     width: 200px;
     margin: 0px auto;
@@ -116,7 +131,11 @@ h2{
     border: solid black 2px;
 }
 
-.background img{
+.imageBox:hover{
+    scale: 1.2;
+}
+
+.background a img{
     background-color: #C7C7E6;
     object-fit: contain;
 }
@@ -148,6 +167,9 @@ footer a{
     text-wrap: nowrap;
 }
 
+footer a:hover{
+    text-decoration: underline;
+}
 
 /*Responsive*/
 @media screen and (max-width: 1286px){
@@ -227,7 +249,7 @@ footer a{
 
     }
     .imageBox{
-        width:44,5vw;
+        width:39.6vw;
         height:30vw;
         border: solid black 2px;
     }
@@ -291,6 +313,9 @@ footer a{
         align-self: center;
         flex-direction: column;
     }
+    .imageBox{
+        width:99%;
+    }
 }
 @media screen and (max-width: 800px){
     /*HEADER*/
@@ -300,12 +325,20 @@ footer a{
         left: 0;
     }
 
-    .navigationMenu{
-        position: relative;
+    .navigationMenu ol{
+        flex-wrap: wrap;
+        margin-top: 90px;
+        align-items: center;
     }
 
     .toggle{
-        display: none;       
+        display: none;
+        margin: 0 1vw;       
+    }
+
+    .toggle a span{
+        min-width: 40vw; 
+        margin: 2vw 0;
     }
 
     .imgHamburgerMenu{
@@ -333,12 +366,22 @@ footer a{
 }
 
 @media screen and (max-width: 580px){
+    /*HEADER*/
+
+    .toggle a span{
+        font-size: 12.5px;
+    }
+
     /*Bandeau*/
     .textOverImage{
         font-size : 28px;
     }
     .imageInBg{
         background-image: url('img/home-grand-prismatic-spring-smaller75.jpg');
+    }
+
+    footer a{
+        font-size: 12.5px;
     }
 }
 
@@ -347,6 +390,8 @@ footer a{
     body{
         font-size:17px;
     }
+
+
     /*Bandeau*/
     .textOverImage{
         font-size : 5vw;
@@ -360,8 +405,5 @@ footer a{
         justify-content: start;
         flex-wrap : wrap;
         padding :0 3vw;
-    }
-    footer a{
-        font-size : 15px;
     }
 }
