@@ -40,12 +40,12 @@
                             </div>
                             <div class="mb-3">
                                 <label for="signup-password-input-fst" class="form-label">Mot de passe</label>
-                                <input data-key="password" type="password" class="signup-input form-control input-password" placeholder="Mot de passe" id="signup-password-input-fst" required>
+                                <input data-key="password" type="password" class="signup-input form-control input-password passwords-to-match" placeholder="Mot de passe" id="signup-password-input-fst" required>
                             </div>
                             <div class="mb-3">
                                 <label for="signup-password-input-scd" class="form-label">Confirmez Mot de passe</label>
                                 <input data-key="password" type="password" class="signup-input
-                                form-control" placeholder="Mot de passe" id="signup-password-input-scd" required>
+                                form-control input-password passwords-to-match" placeholder="Mot de passe" id="signup-password-input-scd" required>
                             </div>
                             <button id="signup-button" type="submit" class="btn btn-primary">S'inscrire</button>
                         </form>
@@ -100,11 +100,11 @@
     <!-- <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-analytics.js"></script> -->
     <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-database.js"></script>
     
-    
+
 
 <!--Firebase downthere-->
 <!-- Scripts -->
-<script type="module">
+<!-- <script type="module">
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-app.js';
     //import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-firestore-lite.js';
     // Follow this pattern to import other Firebase services
@@ -137,10 +137,10 @@
     const dbRef = firebase.database().ref();
     const usersRef = dbRef.child("users");
     
-</script>
+</script> -->
 <!--Firebase uphere-->
+<script src="signinform.js"></script>  
+<script src="../header.js"></script>   
 
-    <script src="signinform.js"></script>  
-    <script src="../header.js"></script>
 </body>
 </html>

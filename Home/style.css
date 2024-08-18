@@ -1,11 +1,11 @@
 @font-face{
     font-family:'Reddit Mono';
-    src: url('./Polices/Reddit_Mono/static/RedditMono-Medium.ttf')
+    src: url('../Polices/Reddit_Mono/static/RedditMono-Medium.ttf')
 }
 
 @font-face{
     font-family: 'Arial';
-    src:url('./Polices/Arial-font/arial_mt_black/ARIBL0.ttf')
+    src:url('../Polices/Arial-font/arial_mt_black/ARIBL0.ttf')
 }
 
 
@@ -77,7 +77,7 @@ header{
 
 /*Bandeau*/
 .imageInBg{
-    background-image: url("img/home-grand-prismatic-spring.jpg");
+    background-image: url("../img/home-grand-prismatic-spring.jpg");
     background-repeat: no-repeat;
     height: 50vw;
     display: flex;
@@ -230,7 +230,7 @@ footer a:hover{
         font-size: 46px;
     }
     .imageInBg{
-        background-image: url('img/home-grand-prismatic-spring-smaller25.jpg');
+        background-image: url('../img/home-grand-prismatic-spring-smaller25.jpg');
 
     }
 
@@ -292,7 +292,7 @@ footer a:hover{
         width : 48vw;
     }
     .imageInBg{
-        background-image: url('img/home-grand-prismatic-spring-smaller50.jpg');
+        background-image: url('../img/home-grand-prismatic-spring-smaller50.jpg');
     }
 
     /*Menu*/
@@ -379,7 +379,7 @@ footer a:hover{
         font-size : 28px;
     }
     .imageInBg{
-        background-image: url('img/home-grand-prismatic-spring-smaller75.jpg');
+        background-image: url('../img/home-grand-prismatic-spring-smaller75.jpg');
     }
 
     /*FOOTER*/
