@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scalCe=1.0">
-    <title>Connexion</title>
+    <title>Inscription</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../Home/style.css">
     <link rel="stylesheet" href="../active.css">
@@ -18,8 +18,8 @@
                 <li class="toPage toggle"><a href="#"><span>Venir au parc</span></a></li>
                 <li class="toPage toggle"><a href="#"><span>La nature à Yellowstone</span></a></li>
                 <li class="toPage toggle"><a href="#"><span>Activités</span></a></li>
-                <li class="toPage toggle active"><a href="../Signin/signin.html"><span>Connexion</span></a></li>
-                <li class="toPage toggle"><a href="../Signin/signup.html"><span>Inscription</span></a></li>
+                <li class="toPage toggle"><a href="../Signin/signin.html"><span>Connexion</span></a></li>
+                <li class="toPage toggle active"><a href="../Signin/signup.html"><span>Inscription</span></a></li>
             </ol>
             <a href="javascript:void(0);" class="icon">
                 <img class="imgHamburgerMenu" src="../icones/header/bars-solid.svg" alt="Menu Hamburger responsive">
@@ -33,7 +33,7 @@
                 <div class="row">
                     <div class="col-6  p-3">
                         <!--Formulaire Inscription(signup)/création-utilisateur-->
-<!--                         <h1>Inscription</h1>
+                        <h1>Inscription</h1>
                         <form class=" m-3 bg-info p-3" id="signup-form">
                             <div class="mb-3">
                                 <label for="signup-email-input" class="form-label">Email</label>
@@ -49,26 +49,13 @@
                                 form-control input-password passwords-to-match" placeholder="Mot de passe" id="signup-password-input-scd" required>
                             </div>
                             <button id="signup-button" type="submit" class="btn btn-primary">S'inscrire</button>
-                        </form> -->
-                        <h1>Connexion</h1>
-                        <form class="m-3 bg-primary p-3" id="signin-form">
-                        <!--Formulaire Connexion(signin)/lire de CRUD?-->
-                            <div class="mb-3">
-                                <label for="signin-email-input" class="form-label">Email</label>
-                                <input data-key="email" type="email" class="signin-input form-control input-email" placeholder="Email" id="signin-email-input" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="signin-password-input" class="form-label">Mot de passe</label>
-                                <input data-key="password" type="password" class="signin-input form-control input-password" placeholder="Mot de passe" id="signin-password-input" required>
-                            </div>
-                            <button id="signin-button" type="submit" class="btn btn-primary">Se connecter</button>
                         </form>
                     </div>
                     <div id="infoBox" class="col">
                         <!-- <h3>Details</h3> -->
                         <div id="securityInfo"></div>
-                     </div>
-                     <!--<div class="col-6 bg-light p-3">
+                    </div>
+                    <!-- <div class="col-6 bg-light p-3">
                         <div class="card text-center">
                             <div class="card-header">
                                 Détails Utilisateur
@@ -77,7 +64,7 @@
                                 <h5 class="card-title">Veuillez sélectionner un utilisateur</h5>
                             </div>
                         </div>
-                    </div> 
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col m-3">
@@ -100,7 +87,7 @@
     <!-- <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-analytics.js"></script> -->
     <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-database.js"></script>
     
-<script src="signinform.js"></script>  
+<script src="../Signin/signupform.js"></script>  
 <script src="../header.js"></script>   
 
 </body>

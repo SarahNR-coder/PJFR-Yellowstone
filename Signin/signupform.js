@@ -59,6 +59,23 @@ const allEmails = document.querySelectorAll(".input-email");
 //Mots de passe
 const allPasswords = document.querySelectorAll(".input-password");
 
+
+//Sélectionner les éléments du formulaire d'inscription
+//-----------------------------------------------------
+//Bouton inscription
+const signupButton = document.querySelector("#signup-button");
+//Formulaire inscription
+const signupForm = document.querySelector("#signup-form");
+//Saisies inscription
+const signupInputs = document.querySelectorAll(".signup-input");
+//Saisie email inscription
+const signupEmailInput = document.querySelector("#signup-email-input");
+
+
+//Saisies dans le formaulaire d'inscription de mots de passes qui doivent correspondre
+const passwordsToMatch = document.querySelectorAll('.passwords-to-match');
+
+
 //Sélectionner les éléments du formulaire de connexion
 //-----------------------------------------------------
 //Bouton connexion
@@ -66,11 +83,11 @@ const signinButton = document.querySelector("#signin-button");
 //Formulaire connexion
 const signinForm = document.querySelector("#signin-form");
 //Saisies connexion
-const signinInputs = document.querySelectorAll(".signin-input");
-/*//Saise email connexion
+const signinInputs = document.getElementsByClassName("signin-input");
+//Saise email connexion
 const signinEmailInput = document.querySelector("signin-email-input");
 //Saisie Mot de passe connexion
-const signinPasswordInput = document.querySelector("#signin-password-input"); */
+const signinPasswordInput = document.querySelector("#signin-password-input");
 
 //Security info HTML
 //------------------
@@ -78,13 +95,13 @@ const securityInfoElement = document.querySelector("#securityInfo");
 
 
 
-/* signupForm.addEventListener('submit',(e)=>{
-    e.preventDefault();
-}) */
-signinForm.addEventListener('submit',(e)=>{
+signupForm.addEventListener('submit',(e)=>{
     e.preventDefault();
 })
-
+/* signinForm.addEventListener('submit',(e)=>{
+    e.preventDefault();
+})
+ */
 
 function xssInputChecker(InputElement){
     let testXss = regexObj.xssPattern.test(InputElement.value); //on vérifie si la saisie correspond à une attaque xss, cas donnant un message d'erreur
@@ -96,7 +113,7 @@ function xssInputChecker(InputElement){
     }
 }
 
-/* function passwordMatchChecker(passwordsColl){
+function passwordMatchChecker(passwordsColl){
     if(passwordsColl[0].value !== passwordsColl[1].value){//les mots de passe qui doivent correspondre sont dans une collection Html; on vérifie que la valeur du précédent correspond à celle du suivant, si ce n'est pas le cas on applique le code suivant
         errorMsg.passwordMsg += "<p> ⛔ Les deux mots de passe doivent correspondre </p>";
     }
@@ -104,7 +121,7 @@ function xssInputChecker(InputElement){
         errorMsg.passwordMsg +="";
     }
     displayErrorMessages(); //Appel de la fonction qui affichera les messages d'erreur s'il y a lieu
-} */
+}
 
 function emailInputChecker(emailInputElement){
     let testEmail = regexObj.regexMail.test(emailInputElement.value); //on vérifie si la saisie correspond à un format email, cas contraire donnant un message d'erreur
@@ -134,13 +151,13 @@ allPasswords.forEach(element => {
     })
 })
 
-/* passwordsToMatch.forEach(element =>{
+passwordsToMatch.forEach(element =>{
     element.addEventListener('keyup', () =>{
         //on applique sur la collection
-        console.log("Par passwordsToMatch; La saisie du mot de passe est:"+element.value);
+        //console.log("Par passwordsToMatch; La saisie du mot de passe est:"+element.value);
         passwordMatchChecker(passwordsToMatch);
     });
-}); */
+});
 
 function passwordInputChecker(passwordInputElement) {
     errorMsg.passwordMsg = ''; // Réinitialiser le message avant de le remplir de nouveau
@@ -165,7 +182,7 @@ function passwordInputChecker(passwordInputElement) {
 
 
 //Au départ le formulaire d'inscription n'est pas valide puisqu'il est vide
-let validSigninInfo = false;
+let validSignupInfo = false;
 
 function displayErrorMessages(){
     //S'il y a des erreurs càd message d'erreur non vide
@@ -182,20 +199,34 @@ function displayErrorMessages(){
         //S'il n'y a pas d'erreurs ou que des champs ne sont pas remplis
 
         //Le formulaire est valide dans le cas où il n'y a pas d'erreurs...
-        validSigninInfo = true;
+        validSignupInfo = true;
 
         //...sauf dans le cas où au moins un champ est vide
 
-        signinInputs.forEach(element =>{
+        signupInputs.forEach(element =>{
             if(!element.value){
-                validSigninInfo = false;
+                validSignupInfo = false;
             }
         })
     }
-    console.log(`validSigninInfo est ${validSigninInfo}`);
+    console.log(`validSignupInfo est ${validSignupInfo}`);
 };
 
 
 
-
+signupButton.addEventListener("click", function(){
+    // console.log("J'ai cliqué sur le bouton d'inscription");
+    if(validSignupInfo === true){
+    // console.log("Dans if(validSignUpInfo === true)");    
+        let newUser = {};
+        for(let i=0; i<2; i++){
+            let key = signupInputs[i].getAttribute('data-key');
+            let value = signupInputs[i].value;
+            newUser[key] = value;
+        }
+        usersRef.push(newUser);
+        console.log("Nouvel utilisateur enregistré");
+        console.log(`Email: ${newUser["email"]}, Password: ${newUser["password"]}`);
+    }
+})
 
