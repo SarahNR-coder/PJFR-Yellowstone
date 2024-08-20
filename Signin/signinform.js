@@ -1,18 +1,3 @@
-/* import { initializeApp } from 'https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-app.js';
-//import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-firestore-lite.js';
-// Follow this pattern to import other Firebase services
-// import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-analytics.js";
-// import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-app-check.js";
-// import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-auth.js";
-// import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-functions.js";
-// import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-firestore.js";
-// import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-storage.js";
-// import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-performance.js";
-// import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-remote-config.js";
-// import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-messaging.js";
-// import {} from "https://www.gstatic.com/firebasejs/${FIREBASE_VERSION}/firebase-database.js"; */
-
-// TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
     apiKey: "AIzaSyDxEuDa0ewmFsBOeV0rAgPHqmWJ7eKg51U",
     authDomain: "pjfr-yellowstone.firebaseapp.com",
@@ -30,7 +15,6 @@ firebase.initializeApp(firebaseConfig);
 const dbRef = firebase.database().ref();
 const usersRef = dbRef.child("users");
 
-/*SIGNIN PAGE*/
 
 //Pour vérifier la conformité des saisies
 const regexObj = {
@@ -47,12 +31,8 @@ let errorMsg = {
     xssMsg:''
 };
 
-//Sélectionner tous les input
-//---------------------------
-const allInputs = document.getElementsByTagName("input");
 
-
-//Sélectionner les éléments par classe
+//Sélectionner les types de saisies
 //------------------------------------
 //Emails
 const allEmails = document.querySelectorAll(".input-email");
@@ -67,52 +47,42 @@ const signinButton = document.querySelector("#signin-button");
 const signinForm = document.querySelector("#signin-form");
 //Saisies connexion
 const signinInputs = document.querySelectorAll(".signin-input");
-/*//Saise email connexion
-const signinEmailInput = document.querySelector("signin-email-input");
-//Saisie Mot de passe connexion
-const signinPasswordInput = document.querySelector("#signin-password-input"); */
+
 
 //Security info HTML
 //------------------
+const infoBoxElement = document.querySelector("#infoBox");
 const securityInfoElement = document.querySelector("#securityInfo");
 
 
 
-/* signupForm.addEventListener('submit',(e)=>{
-    e.preventDefault();
-}) */
 signinForm.addEventListener('submit',(e)=>{
     e.preventDefault();
 })
 
 
-function xssInputChecker(InputElement){
-    let testXss = regexObj.xssPattern.test(InputElement.value); //on vérifie si la saisie correspond à une attaque xss, cas donnant un message d'erreur
+function xssInputChecker(inputElement){
+    let testXss = regexObj.xssPattern.test(inputElement.value); //on vérifie si la saisie correspond à une attaque xss, cas donnant un message d'erreur
     if(testXss){
-        securityInfoElement.style.display = 'block'; //la boite de messages d'erreur s'affiche dans le cas d'un format xss remarqué
+        //securityInfoElement.style.display = 'block'; //la boite de messages d'erreur s'affiche dans le cas d'un format xss remarqué
+        infoBoxElement.style.display = 'block';
         errorMsg.xssMsg = "<p>⛔ Potentielle attaque XSS détéctée.</p>";
+        inputElement.style.background = 'red';
     }else{
         errorMsg.xssMsg = ''; //Réinitialiser le message d'erreur xss à la fin car il comporte qu'une seule expression
     }
 }
 
-/* function passwordMatchChecker(passwordsColl){
-    if(passwordsColl[0].value !== passwordsColl[1].value){//les mots de passe qui doivent correspondre sont dans une collection Html; on vérifie que la valeur du précédent correspond à celle du suivant, si ce n'est pas le cas on applique le code suivant
-        errorMsg.passwordMsg += "<p> ⛔ Les deux mots de passe doivent correspondre </p>";
-    }
-    else{
-        errorMsg.passwordMsg +="";
-    }
-    displayErrorMessages(); //Appel de la fonction qui affichera les messages d'erreur s'il y a lieu
-} */
 
 function emailInputChecker(emailInputElement){
+    emailInputElement.style.background = 'white';
     let testEmail = regexObj.regexMail.test(emailInputElement.value); //on vérifie si la saisie correspond à un format email, cas contraire donnant un message d'erreur
     if(testEmail){
         emailInputElement.style.background ='lightgreen';//fond vert si saisie conforme
         errorMsg.mailMsg ="";
     }else{
-        securityInfoElement.style.display = 'block'; //la boite de messages d'erreur s'affiche dans le cas d'une erreure de format email
+        //securityInfoElement.style.display = 'block'; //la boite de messages d'erreur s'affiche dans le cas d'une erreure de format email
+        infoBoxElement.style.display = 'block';
         emailInputElement.style.background ='red';//fond rouge si saisie non conforme
         errorMsg.mailMsg ="<p>⛔ L'email n'est pas conforme.</p>";
     }
@@ -134,31 +104,29 @@ allPasswords.forEach(element => {
     })
 })
 
-/* passwordsToMatch.forEach(element =>{
-    element.addEventListener('keyup', () =>{
-        //on applique sur la collection
-        console.log("Par passwordsToMatch; La saisie du mot de passe est:"+element.value);
-        passwordMatchChecker(passwordsToMatch);
-    });
-}); */
-
 function passwordInputChecker(passwordInputElement) {
+    passwordInputElement.style.background = 'white';
     errorMsg.passwordMsg = ''; // Réinitialiser le message avant de le remplir de nouveau
 
     if (passwordInputElement.value.length < 6) {
         errorMsg.passwordMsg += `<p>⛔️ Mot de passe trop Faible</p>`;
+        passwordInputElement.style.background = 'red';
     } 
     if (passwordInputElement.value.length > 12) {
         errorMsg.passwordMsg += `<p>⛔️ Mot de passe trop Long</p>`;
+        passwordInputElement.style.background = 'red';
     } 
     if (!passwordInputElement.value.match(regexObj.charDecimal)) {
         errorMsg.passwordMsg += `<p>⛔️ Le Mot de passe doit contenir un chiffre</p>`;
+        passwordInputElement.style.background = 'red';
     }
     if (!passwordInputElement.value.match(regexObj.charSpecial)) {
         errorMsg.passwordMsg += `<p>⛔️ Le Mot de passe doit contenir un caractère spécial</p>`;
+        passwordInputElement.style.background = 'red';
     }
     if(!errorMsg.passwordMsg){
         errorMsg.passwordMsg = "";
+        passwordInputElement.style.background = 'lightgreen';
     }
     displayErrorMessages(); //Appel de la fonction qui affichera les messages d'erreur s'il y a lieu
 };
@@ -175,7 +143,8 @@ function displayErrorMessages(){
     if(errorMsg.passwordMsg) combinedMsg += errorMsg.passwordMsg;
     if(errorMsg.xssMsg) combinedMsg += errorMsg.xssMsg;
     securityInfoElement.innerHTML = combinedMsg;
-    securityInfoElement.style.display = combinedMsg ? 'block' : 'none';
+    infoBoxElement.style.display =combinedMsg ? 'block' : 'none';
+    //securityInfoElement.style.display = combinedMsg ? 'block' : 'none';
     //la boite de messages d'erreur s'affiche en cas d'erreur
 
     if(combinedMsg === ""){
