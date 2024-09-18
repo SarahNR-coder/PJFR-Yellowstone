@@ -110,7 +110,7 @@ header{
     justify-content: space-between;
 }
 
-.pagesMenu h2{
+.uppage-title{/*remplace .pagesMenu h2*/
     font-family: 'Reddit Mono', 'sans-serif';
     font-size: 37px;
     color: black;
@@ -211,7 +211,7 @@ footer a:hover{
         margin-bottom: 30px;
     }
 
-    .pagesMenu h2{
+    .uppage-title{/*remplace .pagesMenu h2*/
         font-size: 34px;
     }
 
@@ -257,7 +257,7 @@ footer a:hover{
         flex-wrap: wrap;
     }
 
-    .pagesMenu h2{
+    .uppage-title{/*remplace .pagesMenu h2*/
         font-size: 32px;
     }
 
@@ -317,7 +317,7 @@ footer a:hover{
     /*Menu*/
 
     
-    .pagesMenu h2{
+    .uppage-title{/*remplace .pagesMenu h2*/
         font-size: 27px;
     }
 
@@ -390,7 +390,7 @@ footer a:hover{
         font-size : 33px;
     }
     /*Menu*/
-    .pagesMenu h2{
+    .uppage-title{/*remplace .pagesMenu h2*/
         font-size: 24px;
     }
 
@@ -408,7 +408,7 @@ footer a:hover{
         font-size : 28px;
     }
     /*Menu*/
-    .pagesMenu h2{
+    .uppage-title{/*remplace .pagesMenu h2*/
         font-size: 21px;
     }
 
@@ -431,7 +431,7 @@ footer a:hover{
     }
     /*Menu*/
 
-    .pagesMenu h2{
+    .uppage-title{/*remplace .pagesMenu h2*/
         font-size: 20px;
     }
 
