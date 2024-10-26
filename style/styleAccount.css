@@ -1,0 +1,8 @@
+main{
+    display: flex;
+    justify-content: center;
+}
+
+section{
+    background-color: #69584f;
+}
