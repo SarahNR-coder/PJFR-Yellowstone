@@ -1,3 +1,18 @@
+//Messages d'erreurs : création htmlelement ul et li dans section id="messageDisplayContent" chaque fois qu'il y a une erreur :   const messagesSet = document.createElement("ul") et const [nom du type de message : email,...] = document.createElement("li"); emailErrorMessage.attribute("id") = emailErrorMessage
+
+
+
+
+
+
+
+
+
+
+
+
+//--------------------------------------------------------------------------------------------
+
 const firebaseConfig = {
     apiKey: "AIzaSyDxEuDa0ewmFsBOeV0rAgPHqmWJ7eKg51U",
     authDomain: "pjfr-yellowstone.firebaseapp.com",

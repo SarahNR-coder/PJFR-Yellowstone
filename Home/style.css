@@ -8,7 +8,10 @@
     src:url('../Polices/Arial-font/arial_mt_black/ARIBL0.ttf')
 }
 
-
+html, body{
+    margin: 0;
+    padding: 0;
+}
 
 /* HEADER */
 
@@ -76,13 +79,31 @@ header{
 /* HOMEPAGE MAIN*/
 
 /*Bandeau*/
-.imageInBg{
-    background-image: url("../img/home-grand-prismatic-spring.jpg");
+
+/* .imageInBg{
+    background-image: url("../img/home-img-bg-spring.jpg");
     background-repeat: no-repeat;
     height: 50vw;
     display: flex;
     margin: 50px 35px;
+} */
+
+.imageInBg{
+    width: 100vw;
+    height: auto;
+    position: relative;
+
 }
+
+.imageInBg img{
+    width: 100%;
+
+}
+
+
+
+
+
 
 .textOverImage{
     background-color: rgba(217, 217, 217, 0.6);
@@ -93,8 +114,11 @@ header{
     font-family: 'Reddit Mono', sans-serif;
     font-weight: bold;
     width: 70%;
-}
 
+    position: absolute;
+    top: 25vw;
+    
+}
 
 /*Menu*/
 .pagesMenu{
