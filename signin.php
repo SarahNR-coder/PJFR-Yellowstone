@@ -5,10 +5,13 @@ session_start();
 include './models/model_users.php';
 include './utils/functions.php';
 
+
+
 //Déclaration des variables d'affichage
 $message="";
 $classNavConnected = "displayNone";
 $classNavUnconnected ="toPage toggle";
+
 
 //Fonction pour tester les données du formulaire de connexion
 function dataTestConnexion(){
@@ -30,8 +33,23 @@ function dataTestConnexion(){
 
 }
 
-//Fonction pour se connecter
-function connect(){
+//EXECUTION
+
+//Si on a été redirigé après inscription, affichage d'un message pop-up
+if(isset($_SESSION['justSignedIn'])){
+    if($_SESSION['justSignedIn'] === true){
+            //Je crée un message popup
+            $messagePopUp = "Vous êtes dorénavant inscrit! Veuillez vous connecter pour accéder à vos avantages";
+            // Générer le code JavaScript pour afficher le popup
+            echo "<script type='text/javascript'>alert('$messagePopUp');</script>";
+    }
+}
+
+//Par défaut on ne provient pas d'une inscription
+$_SESSION['justSignedIn'] = false;
+
+//Connexion
+
     //Vérifie qu'un formulaire de connexion a été envoyé
     if(isset($_POST['Connexion'])){
         //Récupérationdes données de connexion
@@ -70,6 +88,7 @@ function connect(){
                         $_SESSION['name_user'] = $data[0]['nom'];
                         $_SESSION['firstname_user'] = $data[0]['prenom'];
                         $_SESSION['image']=$data[0]['image'];
+                        $_SESSION['justLoggedIn'] = true;
 
                         $message = "{$_SESSION['pseudo']} est connecté avec succés !";
                         
@@ -78,21 +97,18 @@ function connect(){
             }
         }
     }
-}
 
-connect();
 
 //Vérifier la connexion
-function testConnexion(){
+
     if(isset($_SESSION['id_user'])){
         $classNavConnected = "toPage toggle";
         $classNavUnconnected ="displayNone";
         //Je redirige vers la page d'accueil index.php
         header('Location:index.php');
     }
-}
 
-testConnexion();
+
 
 include './views/view_signin.php';
 ?>

@@ -64,7 +64,10 @@
                 </div>
                 <div class="parent-message">
                     <p id="form-no-valid"></p>
-                    <p><?php echo $message ?></p>
+                    <?php if($message !=""){
+                        echo "<p style='background-color:red;color:white;font-weight:bold;font-size:15.5px;border-radius:4.5px;border:1px solid white;padding-top:7px;padding-bottom:7px;box-shadow: 3px 3px 3px black'>".$message."</p>";
+                    }
+                    ?>
                 </div>                
             </form>
         </div>
