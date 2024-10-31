@@ -9,8 +9,8 @@ include './utils/functions.php';
 
 //Déclaration des variables d'affichage
 $message="";
-$classNavConnected = "displayNone";
-$classNavUnconnected ="toPage toggle";
+$visibleConnectedUser = "displayNone";
+$visibleUnconnectedUser ="toPage toggle";
 
 
 //Fonction pour tester les données du formulaire de connexion
@@ -102,8 +102,8 @@ $_SESSION['justSignedIn'] = false;
 //Vérifier la connexion
 
     if(isset($_SESSION['id_user'])){
-        $classNavConnected = "toPage toggle";
-        $classNavUnconnected ="displayNone";
+        $visibleConnectedUser = "toPage toggle";
+        $visibleUnconnectedUser ="displayNone";
         //Je redirige vers la page d'accueil index.php
         header('Location:index.php');
     }

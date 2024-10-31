@@ -8,8 +8,8 @@ $email = "";
 $nameUser = "";
 $firstnameUser = "";
 $message = "";
-$classNavConnected = "toPage toggle";
-$classNavUnconnected ="displayNone";
+$visibleConnectedUser = "toPage toggle";
+$visibleUnconnectedUser ="displayNone";
 
 //AFFICHER LES DONNES DE L'UTILISATEURS  ENREGISTREES EN SESSION
 //1er Etape : je teste si j'ai bien des SESSIONS d'enregistrés

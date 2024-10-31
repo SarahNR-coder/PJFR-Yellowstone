@@ -7,8 +7,8 @@ include './utils/functions.php';
 
 //Déclaration des variables d'affichage
 $message = "";
-$classNavConnected = "displayNone";
-$classNavUnconnected ="toPage toggle";
+$visibleConnectedUser = "displayNone";
+$visibleUnconnectedUser ="toPage toggle";
 
 //Fonction pour tester les données du formulaire d'inscription
 function dataTestInscription(){

@@ -2,16 +2,16 @@
 
 session_start();
 
-$classNavConnected ="";
-$classNavUnconnected ="";
+$visibleConnectedUser ="";
+$visibleUnconnectedUser ="";
 
 //Paramétrer l'affichage
 if(isset($_SESSION['id_user'])){
-    $classNavConnected = "toPage toggle";
-    $classNavUnconnected ="displayNone";
+    $visibleConnectedUser = "toPage toggle";
+    $visibleUnconnectedUser ="displayNone";
 }else{
-    $classNavConnected = "displayNone";
-    $classNavUnconnected ="toPage toggle";
+    $visibleConnectedUser = "displayNone";
+    $visibleUnconnectedUser ="toPage toggle";
 }
 
 //Si on a été redirigé après connexion, affichage d'un message pop-up
@@ -26,6 +26,8 @@ if(isset($_SESSION['justLoggedIn'])){
 
 //Par défaut on ne provient pas d'une connexion
 $_SESSION['justLoggedIn'] = false;
+
+
 
 
 

@@ -18,10 +18,10 @@
                     <li class="toPage toggle"><a href="#"><span>Venir au parc</span></a></li>
                     <li class="toPage toggle"><a href="#"><span>La nature à Yellowstone</span></a></li>
                     <li class="toPage toggle"><a href="#"><span>Activités</span></a></li>
-                    <li class="<?php echo $classNavUnconnected ?>"><a href="./signin.php"><span>Connexion</span></a></li>
-                    <li class="<?php echo $classNavUnconnected ?>"><a href="./signup.php"><span>Inscription</span></a></li>
-                    <li class="<?php echo $classNavConnected ?>"><a href="./account.php"><span>Mon compte</span></a></li>
-                    <li class="<?php echo $classNavConnected ?>"><a href="deco.php"><span>Se déconnecter</span></a></li>
+                    <li class="<?php echo $visibleUnconnectedUser ?>"><a href="./signin.php"><span>Connexion</span></a></li>
+                    <li class="<?php echo $visibleUnconnectedUser ?>"><a href="./signup.php"><span>Inscription</span></a></li>
+                    <li class="<?php echo $visibleConnectedUser ?>"><a href="./account.php"><span>Mon compte</span></a></li>
+                    <li class="<?php echo $visibleConnectedUser ?>"><a href="deco.php"><span>Se déconnecter</span></a></li>
                 </ol>
                     <a href="javascript:void(0);" class="icon">
                         <img class="imgHamburgerMenu" 
