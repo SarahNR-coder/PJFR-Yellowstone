@@ -4,6 +4,8 @@ session_start();
 
 $visibleConnectedUser ="";
 $visibleUnconnectedUser ="";
+$current_page = basename($_SERVER['PHP_SELF']);
+
 
 //Paramétrer l'affichage
 if(isset($_SESSION['id_user'])){
@@ -31,7 +33,8 @@ $_SESSION['justLoggedIn'] = false;
 
 
 
-
+include './views/view_header.php';
 include './views/view_index.php';
+include './views/view_footer.php';
 
 ?>

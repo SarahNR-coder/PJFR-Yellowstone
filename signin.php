@@ -11,6 +11,7 @@ include './utils/functions.php';
 $message="";
 $visibleConnectedUser = "displayNone";
 $visibleUnconnectedUser ="toPage toggle";
+$current_page = basename($_SERVER['PHP_SELF']);
 
 
 //Fonction pour tester les données du formulaire de connexion
@@ -109,6 +110,7 @@ $_SESSION['justSignedIn'] = false;
     }
 
 
-
+include './views/view_header.php';
 include './views/view_signin.php';
+include './views/view_footer.php';
 ?>

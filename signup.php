@@ -9,6 +9,7 @@ include './utils/functions.php';
 $message = "";
 $visibleConnectedUser = "displayNone";
 $visibleUnconnectedUser ="toPage toggle";
+$current_page = basename($_SERVER['PHP_SELF']);
 
 //Fonction pour tester les données du formulaire d'inscription
 function dataTestInscription(){
@@ -68,7 +69,8 @@ function dataTestInscription(){
         }
     }
 
-
+include './views/view_header.php';
 include './views/view_signup.php';
+include './views/view_footer.php';
 
 ?>
