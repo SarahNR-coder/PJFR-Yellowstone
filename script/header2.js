@@ -1,5 +1,5 @@
-const toggleHtmlElements = document.querySelectorAll(".toggle");
-const hamburgerIconElement = document.querySelector(".icon");
+const toggleHtmlElements = document.querySelectorAll(".toggleElt");
+const hamburgerIconElement = document.querySelector(".hb");
 const mainSectionElement = document.querySelector("main");
 
 let toggleTable = Array.from(toggleHtmlElements);
@@ -40,6 +40,12 @@ window.addEventListener("resize", function(){
         isDisplayed = false;
     }
 })
+
+
+
+
+
+
 
 
 

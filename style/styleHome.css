@@ -1,3 +1,96 @@
+* {
+    box-sizing: border-box;
+  }
+
+
+.navMenu{
+    background-color: #4B4F40;
+    font-family: Arial, sans-serif;
+    width:100vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navLinks{
+    list-style-type: none;
+    padding: 0px 1vw 0px 1vw;
+    display: flex;
+    justify-content: space-around;
+    flex: auto;
+    flex-wrap : wrap;
+}
+
+.navlinks li{
+    display: block;
+    margin: auto;
+}
+
+
+.hb{
+    display: none;
+}
+
+.toggleElt{
+    display: block;
+}
+
+.toggleElt a{  
+    text-decoration: none;
+    color: white;
+}
+
+.toggleElt a:hover{
+    text-decoration: underline;
+}
+
+.logoYellowstone{
+    display: block;
+}
+
+/* Margin sinon sur le bord gauche */
+#imgLogo{
+    width: 6vw;
+    height: auto;
+    margin-left: 1.5vw;
+}
+
+@media screen and (max-width: 800px){
+    /*HEADER*/
+
+    .navLinks{
+        flex-wrap: wrap;
+        padding-left:2vw;
+    }
+
+    .toggleElt{
+        display: none;
+        width: 29vw;
+        white-space: nowrap;
+    }
+
+    /* Margin sinon sur le bord droit */
+    #imgHb{
+        width:5vw;
+        height:auto;
+        margin-right: 3vw;
+    }
+
+    .hb{
+        display: block;
+
+    }
+}
+
+@media screen and (max-width: 580px){
+    /*HEADER*/
+    .toggleElt{
+        font-size: 12.5px;
+    }
+}
+
+
+/*--------------------------------------------------------*/
+
 @font-face{
     font-family:'Reddit Mono';
     src: url('../fonts/Reddit_Mono/static/RedditMono-Medium.ttf');
