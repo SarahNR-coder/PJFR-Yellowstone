@@ -8,7 +8,7 @@ include './utils/functions.php';
 //Déclaration des variables d'affichage
 $message = "";
 $visibleConnectedUser = "displayNone";
-$visibleUnconnectedUser ="toPage toggle";
+$visibleUnconnectedUser ="toggleElt";
 $current_page = basename($_SERVER['PHP_SELF']);
 
 //Fonction pour tester les données du formulaire d'inscription

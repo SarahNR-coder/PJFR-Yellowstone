@@ -8,7 +8,7 @@ $email = "";
 $nameUser = "";
 $firstnameUser = "";
 $message = "";
-$visibleConnectedUser = "toPage toggle";
+$visibleConnectedUser = "toggleElt";
 $visibleUnconnectedUser ="displayNone";
 $current_page = basename($_SERVER['PHP_SELF']);
 

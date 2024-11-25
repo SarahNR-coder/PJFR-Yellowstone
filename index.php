@@ -9,11 +9,11 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
 //Paramétrer l'affichage
 if(isset($_SESSION['id_user'])){
-    $visibleConnectedUser = "toPage toggle";
+    $visibleConnectedUser = "toggleElt";
     $visibleUnconnectedUser ="displayNone";
 }else{
     $visibleConnectedUser = "displayNone";
-    $visibleUnconnectedUser ="toPage toggle";
+    $visibleUnconnectedUser ="toggleElt";
 }
 
 //Si on a été redirigé après connexion, affichage d'un message pop-up

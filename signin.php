@@ -10,7 +10,7 @@ include './utils/functions.php';
 //Déclaration des variables d'affichage
 $message="";
 $visibleConnectedUser = "displayNone";
-$visibleUnconnectedUser ="toPage toggle";
+$visibleUnconnectedUser ="toggleElt";
 $current_page = basename($_SERVER['PHP_SELF']);
 
 
@@ -103,7 +103,7 @@ $_SESSION['justSignedIn'] = false;
 //Vérifier la connexion
 
     if(isset($_SESSION['id_user'])){
-        $visibleConnectedUser = "toPage toggle";
+        $visibleConnectedUser = "toggleElt";
         $visibleUnconnectedUser ="displayNone";
         //Je redirige vers la page d'accueil index.php
         header('Location:index.php');
