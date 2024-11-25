@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+  }
+
+@font-face{
+    font-family:'Reddit Mono';
+    src: url('../fonts/Reddit_Mono/static/RedditMono-Medium.ttf');
+}
+
+@font-face{
+    font-family: 'Arial';
+    src:url('../fonts/Arial-font/arial_mt_black/ARIBL0.ttf');
+}
+
+body{
+    margin: 0;
+}
+
+a, p{
+    font-family: Arial, sans-serif;
+}
+
+.displayNone{
+    display : none;
+}
+
+header{
+    margin-bottom: 100px;
+}
+
+.navMenu{
+    background-color: #4B4F40;
+    font-family: Arial, sans-serif;
+    width:100vw;
+    display: flex;
+    justify-content: space-between;
+    padding-top:5px;
+}
+
+.navLinks{
+    list-style-type: none;
+    padding: 0px 1vw 0px 1vw;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    flex: auto;
+    flex-wrap : wrap;
+}
+
+.navlinks li{
+    display: block;
+    margin: auto;
+}
+
+
+.hb{
+    display: none;
+}
+
+.toggleElt{
+    display: block;
+}
+
+.toggleElt a{  
+    text-decoration: none;
+    color: white;
+}
+
+.toggleElt a:hover{
+    text-decoration: underline;
+}
+
+.logoYellowstone{
+    display: block;
+    height: 100%;
+}
+
+.logoYellowstone:active{
+    display: block;
+}
+
+#imgLogo{
+    width: 6vw;
+    height: auto;
+    margin: 12px 3vw 1vw 3vw;
+    min-width:48px;
+}
+
+#imgLogo:hover{
+    transform: scale(1.2);
+}
+
+@media screen and (max-width: 800px){
+    .navLinks{
+        flex-wrap: wrap;
+        padding:0 8vw 0 0;
+    }
+
+    .toggleElt{
+        display: none;
+        width: 50%;
+        white-space: nowrap;
+        text-align:right;
+        margin-bottom:2vw;
+    }
+
+    #imgHb{
+        width:5vw;
+        height:auto;
+        min-width:39.5px;
+        margin: 12px 3vw 0.5vw 3vw;
+    }
+
+    .hb{
+        display: block;
+
+    }
+}
+
+@media screen and (max-width: 580px){
+    .toggleElt{
+        font-size: 14.5px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .toggleElt{
+        width: 100%;
+        white-space: wrap;
+        margin-bottom:5vw;
+    }
+}
