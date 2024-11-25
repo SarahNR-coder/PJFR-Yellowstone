@@ -1,96 +1,3 @@
-* {
-    box-sizing: border-box;
-  }
-
-
-.navMenu{
-    background-color: #4B4F40;
-    font-family: Arial, sans-serif;
-    width:100vw;
-    display: flex;
-    justify-content: space-between;
-}
-
-.navLinks{
-    list-style-type: none;
-    padding: 0px 1vw 0px 1vw;
-    display: flex;
-    justify-content: space-around;
-    flex: auto;
-    flex-wrap : wrap;
-}
-
-.navlinks li{
-    display: block;
-    margin: auto;
-}
-
-
-.hb{
-    display: none;
-}
-
-.toggleElt{
-    display: block;
-}
-
-.toggleElt a{  
-    text-decoration: none;
-    color: white;
-}
-
-.toggleElt a:hover{
-    text-decoration: underline;
-}
-
-.logoYellowstone{
-    display: block;
-}
-
-/* Margin sinon sur le bord gauche */
-#imgLogo{
-    width: 6vw;
-    height: auto;
-    margin-left: 1.5vw;
-}
-
-@media screen and (max-width: 800px){
-    /*HEADER*/
-
-    .navLinks{
-        flex-wrap: wrap;
-        padding-left:2vw;
-    }
-
-    .toggleElt{
-        display: none;
-        width: 29vw;
-        white-space: nowrap;
-    }
-
-    /* Margin sinon sur le bord droit */
-    #imgHb{
-        width:5vw;
-        height:auto;
-        margin-right: 3vw;
-    }
-
-    .hb{
-        display: block;
-
-    }
-}
-
-@media screen and (max-width: 580px){
-    /*HEADER*/
-    .toggleElt{
-        font-size: 12.5px;
-    }
-}
-
-
-/*--------------------------------------------------------*/
-
 @font-face{
     font-family:'Reddit Mono';
     src: url('../fonts/Reddit_Mono/static/RedditMono-Medium.ttf');
@@ -109,74 +16,6 @@ a, p{
     font-family: Arial, sans-serif;
 }
 
-/* HEADER */
-
-.displayNone{
-    display : none;
-}
-
-header{
-    margin-bottom: 100px;
-}
-#logo{
-    height:65px;
-    padding: 0px;
-    margin:10px 0px 2px 0px;
-}
-
-#logo:hover{
-    transform: scale(1.2);
-}
-
-.navigationMenu{
-    background-color: #4B4F40;
-    font-family: Arial, sans-serif;
-}
-
-.navigationMenu ol{
-    list-style-type: none;
-    margin-top: 0px;
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 12px 0px 12px;
-}
-
-.navigationMenu a.icon{
-    display: none;
-}
-
-.toPage{
-    display: flex;
-    align-items: center;
-    padding: 0px 10px;
-    display: block;
-}
-
-.toPage a{
-    height: 100%;
-    width: 100%;
-    padding: 0px;
-    margin: 0px;
-    text-decoration: none;
-    color: white;
-    
-}
-.toPage a:hover{
-    text-decoration: underline;
-}
-
-.logo{
-    display: block;
-}
-
-.toPage a span{
-    display: block;
-    margin: 30px 0px  10px 0px;
-}
-
-
-
-/* HOMEPAGE MAIN*/
 
 /*Bandeau*/
 .imageInBg{
@@ -203,11 +42,10 @@ header{
 .pagesMenu{
     display:flex;
     flex-wrap: wrap;
-    /*modif dessous*/
     justify-content: space-between;
 }
 
-.uppage-title{/*remplace .pagesMenu h2*/
+.uppage-title{
     font-family: 'Reddit Mono', 'sans-serif';
     font-size: 37px;
     color: black;
@@ -268,29 +106,6 @@ header{
     text-align: justify;
 }
 
-
-/*FOOTER*/
-
-footer{
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    background-color: #4B4F40;
-    font-family: Arial, sans-serif;
-}
-
-footer a{
-    display: block;
-    text-decoration: none;
-    color: white;
-    margin: 1.5vw 4vw;
-    text-wrap: nowrap;
-}
-
-footer a:hover{
-    text-decoration: underline;
-}
-
 /*------------------RESPONSIVE------------------*/
 @media screen and (max-width: 1286px){
     /*HOMEPAGE MAIN*/
@@ -308,7 +123,7 @@ footer a:hover{
         margin-bottom: 30px;
     }
 
-    .uppage-title{/*remplace .pagesMenu h2*/
+    .uppage-title{
         font-size: 34px;
     }
 
@@ -340,7 +155,6 @@ footer a:hover{
     body{
         margin: 0px;
     }
-    /*HOMEPAGE MAIN*/
 
     /*Bandeau*/
     .textOverImage{
@@ -354,7 +168,7 @@ footer a:hover{
         flex-wrap: wrap;
     }
 
-    .uppage-title{/*remplace .pagesMenu h2*/
+    .uppage-title{
         font-size: 32px;
     }
 
@@ -402,9 +216,6 @@ footer a:hover{
 }
 
 @media screen and (max-width: 900px){
-    
-    /*HOMEPAGE MAIN*/
-
     /*Bandeau*/
     .textOverImage{
         font-size: 38px;
@@ -414,7 +225,7 @@ footer a:hover{
     /*Menu*/
 
     
-    .uppage-title{/*remplace .pagesMenu h2*/
+    .uppage-title{
         font-size: 27px;
     }
 
@@ -445,43 +256,7 @@ footer a:hover{
     }
 }
 @media screen and (max-width: 800px){
-    /*HEADER*/
-    .logo{
-        position : absolute;
-        top: 0;
-        left: 0;
-    }
 
-    .navigationMenu ol{
-        flex-wrap: wrap;
-        margin-top: 90px;
-        align-items: center;
-    }
-
-    .toggle{
-        display: none;
-        margin: 0 1vw;       
-    }
-
-    .toggle a span{
-        min-width: 40vw; 
-        margin: 2vw 0;
-    }
-
-    .imgHamburgerMenu{
-        width:40px;
-        height:auto;
-        padding: 20px 10px 0px 0px;
-    }
-
-    .navigationMenu a.icon{
-        display: block;
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-
-    /*HOMEPAGE MAIN*/
     /*Bandeau*/
     .textOverImage{
         font-size : 33px;
@@ -494,24 +269,13 @@ footer a:hover{
 }
 
 @media screen and (max-width: 580px){
-    /*HEADER*/
-    .toggle a span{
-        font-size: 12.5px;
-    }
-
-    /*HOMEPAGE MAIN*/
     /*Bandeau*/
     .textOverImage{
         font-size : 28px;
     }
     /*Menu*/
-    .uppage-title{/*remplace .pagesMenu h2*/
+    .uppage-title{
         font-size: 21px;
-    }
-
-    /*FOOTER*/
-    footer a{
-        font-size: 12.5px;
     }
 }
 
@@ -521,25 +285,17 @@ footer a:hover{
         font-size:17px;
     }
 
-    /*HOMEPAGE MAIN*/
     /*Bandeau*/
     .textOverImage{
         font-size : 5vw;
     }
     /*Menu*/
 
-    .uppage-title{/*remplace .pagesMenu h2*/
+    .uppage-title{
         font-size: 20px;
     }
 
     .textBox h3{
         font-size: 18px;
-    }
-
-    /*FOOTER*/
-    footer{
-        justify-content: start;
-        flex-wrap : wrap;
-        padding :0 3vw;
     }
 }
