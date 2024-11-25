@@ -1,0 +1,35 @@
+/*FOOTER*/
+
+footer{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: #4B4F40;
+    font-family: Arial, sans-serif;
+}
+
+footer a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    margin: 1.5vw 4vw;
+    text-wrap: nowrap;
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 580px){
+    footer a{
+        font-size: 12.5px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    footer{
+        justify-content: start;
+        flex-wrap : wrap;
+        padding :0 3vw;
+    }
+}
