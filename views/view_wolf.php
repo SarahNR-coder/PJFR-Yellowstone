@@ -1,5 +1,5 @@
 <main>
-    <h1>Le Loup Gris</h1>
+    <h1 id="uppage-title">Le Loup Gris</h1>
     <section id="idCard">
         <div id="tag">
             CANIS LUPUS
