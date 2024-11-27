@@ -12,6 +12,7 @@
     <script src="./script/header2.js" defer></script>
     <?php echo ($current_page == 'index.php' )? '<link rel="stylesheet" href="./style/styleHome.css">' : ''; ?>
     <?php echo ($current_page == 'signin.php' || $current_page == 'signup.php')? '<link rel="stylesheet" href="./style/styleForms.css">' : ''; ?>
+    <?php echo ($current_page == 'wolf.php')? '<link rel="stylesheet" href="./style/styleWolf.css">' : ''; ?>
 </head>
 <body>
     <header>
