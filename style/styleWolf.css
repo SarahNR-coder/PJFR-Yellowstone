@@ -1,0 +1,54 @@
+@font-face{
+    font-family:'Reddit Mono';
+    src: url('../fonts/Reddit_Mono/static/RedditMono-Medium.ttf');
+}
+
+@font-face{
+    font-family: 'Arial';
+    src:url('../fonts/Arial-font/arial_mt_black/ARIBL0.ttf');
+}
+
+#uppage-title{
+    font-family: 'Reddit Mono', 'sans-serif';
+    font-size: 37px;
+    color: black;
+    width: 100%;
+    text-align: center;
+    margin: 3vw 0;
+}
+
+section#idCard{
+    display:flex;
+    flex-direction:column;
+    margin: 9vw 0;
+}
+
+div#tag{
+    font-family: 'Reddit Mono', 'sans-serif';
+    align-self: flex-end;
+    margin-right:12vw;
+    padding: 0.4vw 9vw;
+    background-color: #9FA290;
+    color: white;
+}
+
+article#infoCard{
+    width:80vw;
+    margin:0 auto;
+    border: solid 1px black;
+    display:flex;
+    justify-content:space-between;
+
+    img{
+        object-fit: cover;
+        width: 35%;
+    }
+}
+
+div#features{
+    padding:5vw;
+    p{
+        
+    font-family: 'Reddit Mono', 'sans-serif';
+    }
+}
