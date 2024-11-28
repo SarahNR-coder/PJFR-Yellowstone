@@ -1,5 +1,5 @@
 <main>
-    <h1 id="uppage-title">Le Loup Gris</h1>
+    <h1 id="title">Le Loup Gris</h1>
     <section id="idCard">
         <div id="tag">
             CANIS LUPUS
@@ -18,9 +18,9 @@
         </article>
     </section>
     <section id="location">
-        <h2>LE LOUPS GRIS DANS LE PARC DU YELLOWSTONE</h2>
+        <h2 class="subtitle">LE LOUPS GRIS DANS LE PARC DU YELLOWSTONE</h2>
         <img src="./img/wolf-animals-aera-map.webp" alt="Carte montrant la répartition faune dans le parc Yellowstone" />
     </section>
     <section id="comments">
-        <h2>COMMENTAIRES</h2>
+        <h2 class="subtitle">COMMENTAIRES</h2>
     </section>

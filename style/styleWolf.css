@@ -8,13 +8,22 @@
     src:url('../fonts/Arial-font/arial_mt_black/ARIBL0.ttf');
 }
 
-#uppage-title{
+#title{
     font-family: 'Reddit Mono', 'sans-serif';
-    font-size: 37px;
+    font-size: 40px;
     color: black;
     width: 100%;
     text-align: center;
     margin: 3vw 0;
+}
+
+.subtitle{
+    font-family: 'Reddit Mono', 'sans-serif';
+    font-size: 36px;
+    color: black;
+    width: 100%;
+    text-align: start;
+    margin: 3vw 0 3vw 12vw;
 }
 
 section#idCard{
@@ -52,3 +61,16 @@ div#features{
     font-family: 'Reddit Mono', 'sans-serif';
     }
 }
+
+section#location{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:9vw;
+
+    img{
+        align-self:center;
+        width:65%;
+        margin: 5vw 0;
+    }
+}
+
