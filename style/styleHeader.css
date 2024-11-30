@@ -12,8 +12,15 @@
     src:url('../fonts/Arial-font/arial_mt_black/ARIBL0.ttf');
 }
 
+html{ 
+    max-width: 100% !important; 
+    overflow-x: hidden !important; 
+} 
+
 body{
     margin: 0;
+    max-width: 100% !important; 
+    overflow-x: hidden !important; 
 }
 
 a, p{
