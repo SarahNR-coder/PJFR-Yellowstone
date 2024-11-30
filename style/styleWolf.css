@@ -8,13 +8,17 @@
     src:url('../fonts/Arial-font/arial_mt_black/ARIBL0.ttf');
 }
 
+main{
+    margin:0;
+}
+
 #title{
     font-family: 'Reddit Mono', 'sans-serif';
     font-size: 35px;
     color: black;
     width: 100%;
     text-align: center;
-    margin: 3vw 0;
+    margin: 6vh 0 6vh 0;
 }
 
 .subtitle{
@@ -29,7 +33,7 @@
 section#idCard{
     display:flex;
     flex-direction:column;
-    margin: 9vw 0;
+    margin: 2.5vw 0;
 }
 
 div#tag{
@@ -66,8 +70,6 @@ div#features{
 section#location{
     display:flex;
     flex-direction:column;
-    margin-bottom:9vw;
-
 }
 
 div#containImg{
@@ -75,7 +77,7 @@ div#containImg{
     display:flex;
     flex-direction:column;
     width:80%;
-    margin: 5vw 3vw;
+    margin: 1.5vw 3vw;
     border: solid 3px #9FA290;
     img{
         min-width:800px;
