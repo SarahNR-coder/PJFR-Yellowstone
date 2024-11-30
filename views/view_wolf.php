@@ -19,7 +19,9 @@
     </section>
     <section id="location">
         <h2 class="subtitle">LE LOUPS GRIS DANS LE PARC DU YELLOWSTONE</h2>
-        <img src="./img/wolf-animals-aera-map.webp" alt="Carte montrant la répartition faune dans le parc Yellowstone" />
+        <div id="containImg">
+            <img src="./img/wolf-animals-aera-map.webp" alt="Carte montrant la répartition faune dans le parc Yellowstone" />
+        </div>
     </section>
     <section id="comments">
         <h2 class="subtitle">COMMENTAIRES</h2>
