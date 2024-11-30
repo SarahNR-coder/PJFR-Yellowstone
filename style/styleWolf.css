@@ -10,7 +10,7 @@
 
 #title{
     font-family: 'Reddit Mono', 'sans-serif';
-    font-size: 40px;
+    font-size: 35px;
     color: black;
     width: 100%;
     text-align: center;
@@ -19,7 +19,7 @@
 
 .subtitle{
     font-family: 'Reddit Mono', 'sans-serif';
-    font-size: 36px;
+    font-size: 22px;
     color: black;
     width: 100%;
     text-align: start;
@@ -78,15 +78,31 @@ div#containImg{
     margin: 5vw 3vw;
     border: solid 3px #9FA290;
     img{
-        align-self:center;
-        width:80%;
         min-width:800px;
         height:auto;
+        display:block;
+        margin:0;
+
     }
 }
 
 @media screen and (max-width: 1200px){
     div#containImg{
-        overflow-x:scroll;
+        overflow-x:auto;
+    }
+}
+
+@media screen and (max-width: 580px){
+
+    #title{
+        font-size: 28px;
+    }
+
+    .subtitle{
+        font-size: 18px;
+    }
+
+    p{
+        font-size: 14px;
     }
 }
