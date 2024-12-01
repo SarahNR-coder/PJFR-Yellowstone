@@ -25,4 +25,18 @@
     </section>
     <section id="comments">
         <h2 class="subtitle">COMMENTAIRES</h2>
+        <h3>Commentez<h3>
+        <?php if(isset($_SESSION['id_user'])){
+            echo '<form action="" method="post">
+                <label for="newComment">Nouveau Commentaire</label>
+                <textarea name="contenuCommentaire" id="newComment"></textarea>
+                <input type="submit" name="Poster">
+            </form>';
+        }else{
+            echo "Veuillez vous connecter pour beneficier de cette fonctionnalité";
+        }
+        ?>
+        <h3>Commentaires des visiteurs<h3>
+        <?php echo $listComments ?>
     </section>
+</main>
