@@ -8,8 +8,8 @@ class ModelUser{
     private ?string $motDePasse;
     private ?string $nom;
     private ?string $prenom;
-    private ?DATETIME $dateInscription;
-    private ?BLOB $image;
+    private ?string $dateInscription;
+    private ?string $image;
 
 
     //constructeur
@@ -42,11 +42,11 @@ class ModelUser{
         return $this->prenom;
     }
 
-    public function getDateInscription(): ?DATETIME{
+    public function getDateInscription(): ?string{
         return $this->dateInscription;
     }
 
-    public function getImage(): ?BLOB{
+    public function getImage(): ?string{
         return $this->image;
     }
 
@@ -80,21 +80,22 @@ class ModelUser{
         return $this;
     }
 
-    public function setDateInscription(?DATETIME $dateInscription): ModelUser{
+    public function setDateInscription(?string $dateInscription): ModelUser{
         $this->dateInscription = $dateInscription;
         return $this;
     }
 
-    public function setImage(?BLOB $image): ModelUser{
+    public function setImage(?string $image): ModelUser{
         $this->image = $image;
         return $this;
     }
 
     function addUser():string{
         //1ere étape intancier l'objet de connexion PDO
-        $bdd= new PDO("mysql:host=127.0.0.1;dbname=utilisateurs","root","",array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+        $bdd= new PDO("mysql:host=127.0.0.1;dbname=yellowstone","root","",array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
 
         //Récupération des données de l'objet
+        //Note : prénom et nom de famille ne se définissent pas avec le formulaire d'inscription mais plus tard dans la page compte
         $pseudo = $this->getPseudo();
         $email =$this->getEmail();
         $motDePasse=$this->getMotdepasse();
@@ -103,14 +104,14 @@ class ModelUser{
 
         try{
             //2eme étape : préparer la requête
-            $req =$bdd->prepare('INSERT INTO utilisateur(pseudo, email, motdepasse, date_inscription,id_role_utilisateur) VALUES (?,?,?,?,?)');
+            $req =$bdd->prepare('INSERT INTO utilisateur(pseudo, email, motdepasse, date_inscription,id_role) VALUES (?,?,?,?,?)');
 
             //3eme étape : binding de paramètres
             $req->bindParam(1,$pseudo,PDO::PARAM_STR);
             $req->bindParam(2,$email,PDO::PARAM_STR);
             $req->bindParam(3,$motDePasse,PDO::PARAM_STR);
             $req->bindParam(4,$dateInscription,PDO::PARAM_STR);
-            $req->bindParam(5,$idRoleUtilisateur,PDO::PARAM_STR);
+            $req->bindParam(5,$idRoleUtilisateur,PDO::PARAM_INT);
 
             //4ème étape : executer la requête
             $req->execute();
@@ -127,7 +128,7 @@ class ModelUser{
 
     function readUserByEmail():array | string{
         //1ere Etape : instancier l'objet de connexion PDO
-        $bdd = new PDO("mysql:host=127.0.0.1;dbname=utilisateurs", 'root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $bdd = new PDO("mysql:host=127.0.0.1;dbname=yellowstone", 'root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
         //Récupération du pseudo depuis l'objet
         $email=$this->email;
@@ -135,7 +136,7 @@ class ModelUser{
         //Try..Catch
         try{
             //2nd étape : péparer la requête SELECT
-            $req=$bdd->prepare('SELECT id_utilisateur, motdepasse, pseudo, email, nom, prenom, image FROM utilisateur WHERE email = ?');
+            $req=$bdd->prepare('SELECT id_utilisateur, motdepasse, pseudo, email, nomdefamille, prenom, image_profil FROM utilisateur WHERE email = ?');
 
             //3eme étape: Biding de paramètre pour le pseudo
             $req->bindParam(1,$email,PDO::PARAM_STR);
