@@ -62,7 +62,7 @@ class ModelRating{
 
     function addRating():string{
         //1ere étape intancier l'objet de connexion PDO
-        $bdd= new PDO("mysql:host=127.0.0.1;dbname=yellowstone","root","",array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+        $bdd= new PDO("mysql:host=127.0.0.1;dbname=yellowstone2","root","",array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
 
         //Récupération des données de l'objet
         $dateNote = $this->getDateNote();
@@ -94,17 +94,14 @@ class ModelRating{
     }
 
 
-    public function readRatingsByUser():array | string{
+    public function readRatingsByUser(?int $idNoteur):array | string{
         //1Er Etape : Instancier l'objet de connexion PDO
-        $bdd = new PDO('mysql:host=localhost;dbname=yellowstone','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-
-        //Récupération de $id_user depuis l'objet
-        $idNoteur = $this->getIdNoteur;
+        $bdd = new PDO('mysql:host=localhost;dbname=yellowstone2','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
         //Try...Catch
         try{
             //2nd Etape : préparer ma requête SELECT
-            $req = $bdd->prepare('SELECT date_note, note, id_page, id_noteur FROM note INNER JOIN utilisateur ON note.id_noteur = utilisateur.id_utilisateur WHERE id_utilisateur = ?');
+            $req = $bdd->prepare('SELECT date_note, note, id_page, id_noteur FROM note INNER JOIN page_site ON note.id_page = page_site.id_page WHERE id_noteur = ?');
 
             //3eme Etape : Binding de Paramètre pour relier chaque ? à sa donnée
             $req->bindParam(1,$idNoteur,PDO::PARAM_INT);
@@ -120,17 +117,14 @@ class ModelRating{
         }
     }
 
-    public function readRatingsByPage():array | string{
+    public function readRatingsByPage(?int $idPage):array | string{
         //1Er Etape : Instancier l'objet de connexion PDO
-        $bdd = new PDO('mysql:host=localhost;dbname=yellowstone','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-
-        //Récupération de $id_page depuis l'objet
-        $idPage = $this->getIdPage;
+        $bdd = new PDO('mysql:host=localhost;dbname=yellowstone2','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
         //Try...Catch
         try{
             //2nd Etape : préparer ma requête SELECT
-            $req = $bdd->prepare('SELECT date_note, note, id_page, id_noteur FROM note INNER JOIN page_site ON note.id_page = page.id_page WHERE id_page = ?');
+            $req = $bdd->prepare('SELECT date_note, note, id_page, id_noteur, pseudo FROM note INNER JOIN utilisateur ON note.id_noteur = utilisateur.id_utilisateur WHERE note.id_page = ?');
 
             //3eme Etape : Binding de Paramètre pour relier chaque ? à sa donnée
             $req->bindParam(1,$idPage,PDO::PARAM_INT);
