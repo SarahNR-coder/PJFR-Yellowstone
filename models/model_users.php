@@ -92,7 +92,7 @@ class ModelUser{
 
     function addUser():string{
         //1ere étape intancier l'objet de connexion PDO
-        $bdd= new PDO("mysql:host=127.0.0.1;dbname=yellowstone","root","",array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+        $bdd= new PDO("mysql:host=127.0.0.1;dbname=yellowstone2","root","",array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
 
         //Récupération des données de l'objet
         //Note : prénom et nom de famille ne se définissent pas avec le formulaire d'inscription mais plus tard dans la page compte
@@ -128,7 +128,7 @@ class ModelUser{
 
     function readUserByEmail():array | string{
         //1ere Etape : instancier l'objet de connexion PDO
-        $bdd = new PDO("mysql:host=127.0.0.1;dbname=yellowstone", 'root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $bdd = new PDO("mysql:host=127.0.0.1;dbname=yellowstone2", 'root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
         //Récupération du pseudo depuis l'objet
         $email=$this->email;
