@@ -34,7 +34,7 @@ function dataTestAddingComment(){
 
     $current_page = basename($_SERVER['PHP_SELF']);
     $page = new ModelPage($current_page);
-    $tabIdPage = $page->getPageIdFromName();
+    $tabIdPage = $page->getPageIdFromAddress();
     $idPage = $tabIdPage[0];
     $contenu_commentaire = sanitize($_POST['contenuCommentaire']);
     $date_commentaire = date("Y-m-d H:i:s");
@@ -62,6 +62,15 @@ if(isset($_POST['Poster'])){
     }
 }
 
+function cardComment($commentParam){
+    return "<article class='cardComment'>
+        <div class='commentInfos'>
+            <p>{$commentParam['date_commentaire']}</p>
+            <p>{$commentParam['pseudo']}</p>
+        </div>
+        <p class='contenuCommentaire'>{$commentParam['contenu_commentaire']}</p>
+    </article>";
+}
 
 function dataTestAddingRating(){
     if(empty($_POST["nombreEtoiles"])){
@@ -71,7 +80,7 @@ function dataTestAddingRating(){
     //Récupérer l'identifiant correspondant à la page en base de données
     $current_page = basename($_SERVER['PHP_SELF']);
     $page = new ModelPage($current_page);
-    $tabIdPage = $page->getPageIdFromName();
+    $tabIdPage = $page->getPageIdFromAddress();
     $idPage = $tabIdPage[0];
 
     $note = sanitize($_POST['nombreEtoiles']);
@@ -99,6 +108,63 @@ if(isset($_POST['Noter'])){
         $messageRating = $rating->addRating();      
     }
 }
+
+function cardRating($ratingParam){
+    $note = $ratingParam["note"];
+
+    $stars="";
+    for($i=1; $i<=5; $i++){
+        if($i<=$ratingParam['note']){
+            $stars.='<i class="fa-solid fa-star" style="color: #4B4F40"></i>';
+        }else{
+            $stars.='<i class="fa-solid fa-star" style="color:#9fa290"></i>';
+        }
+    }
+
+    return '<article class="cardRating">
+        <div class="ratingInfos">
+            <p>'.$ratingParam["date_note"].'</p>
+            <p>'.$ratingParam["pseudo"].'</p>
+        </div>
+        <p class="ratingResults">
+            '.$stars.'
+        </p>
+    </article>';
+}
+
+$current_page = basename($_SERVER['PHP_SELF']);
+$page = new ModelPage($current_page);
+$tabIdPage = $page->getPageIdFromAddress();
+$idPage = $tabIdPage[0];
+
+
+//Affichage des notations de cette page
+//0) Création de mon objet $barman à partir du ModelRating
+$barman = new ModelRating();
+
+//1) lancer la récupération des notations pour cette page
+$ratings = $barman->readRatingsByPage($idPage);
+
+//2)Traiter le tableau de $comment, et afficher chaque commentaire dedans
+foreach($ratings as $rating){
+    $listRatings = $listRatings.cardRating($rating);
+}
+
+
+
+
+//Affichage des commentaires de cette page
+//0) Création de mon objet $barman à partir du ModelComment
+$barman = new ModelComment();
+
+//1) lancer la récupération des commentaires pour cette page
+$comments = $barman->readCommentsByPage($idPage);
+
+//2)Traiter le tableau de $comment, et afficher chaque commentaire dedans
+foreach($comments as $comment){
+    $listComments = $listComments.cardComment($comment);
+}
+
 
 include './views/view_header.php';
 include './views/view_wolf.php';
