@@ -89,6 +89,31 @@ div#containImg{
     }
 }
 
+.rating {
+    direction: rtl;
+    display: inline-flex;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 3vw;
+    color: #9fa290;
+    cursor: pointer;
+}
+
+#numberOfStars{
+    display:none;
+}
+
+.rating label:hover,
+.rating label:hover ~ label,
+.rating input:checked ~ label {
+  color: #4B4F40;
+}
+
 @media screen and (max-width: 1200px){
     div#containImg{
         overflow-x:auto;
