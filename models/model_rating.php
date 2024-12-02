@@ -101,7 +101,7 @@ class ModelRating{
         //Try...Catch
         try{
             //2nd Etape : préparer ma requête SELECT
-            $req = $bdd->prepare('SELECT date_note, note, id_page, id_noteur FROM note INNER JOIN page_site ON note.id_page = page_site.id_page WHERE id_noteur = ?');
+            $req = $bdd->prepare('SELECT date_note, note, id_page, id_noteur, nom_page FROM note INNER JOIN page_site ON note.id_page = page_site.id_page WHERE id_noteur = ?');
 
             //3eme Etape : Binding de Paramètre pour relier chaque ? à sa donnée
             $req->bindParam(1,$idNoteur,PDO::PARAM_INT);

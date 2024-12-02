@@ -145,7 +145,7 @@ $barman = new ModelRating();
 //1) lancer la récupération des notations pour cette page
 $ratings = $barman->readRatingsByPage($idPage);
 
-//2)Traiter le tableau de $comment, et afficher chaque commentaire dedans
+//2)Traiter le tableau de $rating, et afficher chaque note dedans
 foreach($ratings as $rating){
     $listRatings = $listRatings.cardRating($rating);
 }

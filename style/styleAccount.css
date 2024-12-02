@@ -1,8 +1,56 @@
 main{
     display: flex;
-    justify-content: center;
+    flex-direction:row;
+    flex-wrap: wrap;
+    width:100vw;
 }
 
-section{
-    background-color: #69584f;
+
+#title{
+    font-family: 'Reddit Mono', 'sans-serif';
+    font-size: 35px;
+    color: black;
+    margin: 6vh 0 6vh 0;
+    display:block;
+    width: 100%;
+    text-align: center;
 }
+
+#infosUtilisateur, #historiqueCommandes, #historiqueCommentaires, #historiqueNotes{
+    width:50%;
+    margin-top:4vw;
+}
+
+#infosUtilisateur{
+    display:flex;
+    flex-direction:column;
+}
+
+.secondBestTitle{
+    font-family: 'Arial', 'sans-serif';
+    width:90%;
+    text-align:center;
+    background-color: #69584f;
+    margin:0 auto;
+}
+
+#infosBasiques{
+    padding: 0 2vw;
+    width: 70%;
+    margin: 2vw auto;
+
+    p{
+        background-color: #69584f;
+        border: 1px solid black;
+        padding: 1vw;
+        margin:1vw;
+        display:flex;
+        justify-content: space-between;
+        
+    }
+}
+
+.info{
+    color: white;
+}
+
