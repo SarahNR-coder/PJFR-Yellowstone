@@ -25,7 +25,8 @@
     </section>
     <section id="comments">
         <h2 class="subtitle">COMMENTAIRES</h2>
-        <h3>Notez</h3>
+        <h3 class="smalltitle">Notez</h3>
+        <div id="ratingSection">
         <?php if(isset($_SESSION['id_user'])){
             echo '<div class="rating">
                 <input type="radio" id="star5" name="rating" value="5" />
@@ -45,29 +46,30 @@
             </div>
             <form action="" method="post" id="selectedStar">
             <input id="nombreEtoiles" type="text" name="nombreEtoiles"/>
-            <input type="submit" name="Noter" value="Noter"/>
+            <input type="submit" name="Noter" id="noter" value="Noter"/>
             </form>
-            <p>'.$messageRating.'</p>
+            <p id="messageRating">'.$messageRating.'</p>
             ';
         }else{
             echo "Veuillez vous connecter pour beneficier de cette fonctionnalité";
         }
-        ?>    
-        <h3>Commentez</h3>
+        ?>
+        </div>    
+        <h3 class="smalltitle">Commentez</h3>
         <?php if(isset($_SESSION['id_user'])){
-            echo '<form action="" method="post">
+            echo '<form action="" method="post" id="formulaireCommentaire">
                 <label for="newComment">Nouveau Commentaire</label>
-                <textarea name="contenuCommentaire" id="newComment"></textarea>
+                <textarea name="contenuCommentaire" id="newComment" rows="10" cols="50"></textarea>
                 <input type="submit" name="Poster">
             </form>
-            <p>'.$messageComment.'</p>';
+            <p id="messageComment">'.$messageComment.'</p>';
         }else{
             echo "Veuillez vous connecter pour beneficier de cette fonctionnalité";
         }
         ?>
-        <h3>Notes des visiteurs</h3>
+        <h3 class="smalltitle">Notes des visiteurs</h3>
         <?php echo $listRatings ?>
-        <h3>Commentaires des visiteurs<h3>
+        <h3 class="smalltitle">Commentaires des visiteurs<h3>
         <?php echo $listComments ?>
     </section>
 </main>
