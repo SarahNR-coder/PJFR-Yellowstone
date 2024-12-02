@@ -13,6 +13,8 @@
     <?php echo ($current_page == 'index.php' )? '<link rel="stylesheet" href="./style/styleHome.css">' : ''; ?>
     <?php echo ($current_page == 'signin.php' || $current_page == 'signup.php')? '<link rel="stylesheet" href="./style/styleForms.css">' : ''; ?>
     <?php echo ($current_page == 'wolf.php')? '<link rel="stylesheet" href="./style/styleWolf.css">' : ''; ?>
+    <?php echo ($current_page == 'wolf.php')? '<script src="./script/wolf.js" defer></script>' : ''; ?>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 </head>
 <body>
     <header>
