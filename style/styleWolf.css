@@ -10,6 +10,7 @@
 
 main{
     margin:0;
+    font-family: 'Arial', 'sans-serif';
 }
 
 #title{
@@ -28,6 +29,15 @@ main{
     width: 100%;
     text-align: start;
     margin: 3vw 0 3vw 12vw;
+}
+
+.smalltitle{
+    font-family: 'Reddit Mono', 'sans-serif';
+    font-size: 19px;
+    color: black;
+    width: 100%;
+    text-align: start;
+    margin: 2vw 0 2vw 10vw;
 }
 
 section#idCard{
@@ -89,9 +99,15 @@ div#containImg{
     }
 }
 
+section#comments{
+    display:flex;
+    flex-direction:column;
+}
+
 .rating {
-    direction: rtl;
     display: inline-flex;
+    direction:rtl;
+    margin: 2vw 4vw;
 }
 
 .rating input {
@@ -113,6 +129,107 @@ div#containImg{
 .rating input:checked ~ label {
   color: #4B4F40;
 }
+
+#ratingSection {
+    display:flex;
+    flex-direction:row;
+    margin-left: 10vw;
+}
+
+#noter{
+    margin: 1vw 1.5vw;
+    padding: 1.5vw 3vw;
+    border-radius: 15px;
+    background-color: #8d7c7f;
+    border: 3px solid black;
+    color: white;
+    font-weight: bold;
+}
+
+#messageRating{
+    margin: 3vw 6vw;
+    font-style: italic;
+}
+
+#formulaireCommentaire{
+    width:70%;
+    align-self:center;
+    display:flex;
+    flex-direction: column;
+
+    label {
+        margin: 1vw 1vw 2.2vw 0;
+    }
+
+    textarea {
+        border: 2px solid #8d7c7f;
+    }
+
+    input {
+        align-self:center;
+        width: 17%;
+        margin: 2vw auto;
+        padding: 1.5vw 3vw;
+        border-radius: 15px;
+        background-color: #8d7c7f;
+        border: 3px solid black;
+        color: white;
+        font-weight: bold;
+    }
+}
+
+#messageComment {
+    width:70%;
+    align-self:center;
+    font-style: italic;
+}
+
+
+.cardRating {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ratingInfos {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ratingResults {
+    width : 80%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content:center;
+    border: 2px solid #4B4F40;
+    padding: 6vw 0;
+}
+
+.cardComment {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.commentInfos {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contenuCommentaire {
+    border: 2px solid #9FA290;
+    width:80%;
+    padding: 2.5vw;
+}
+
+
+
 
 @media screen and (max-width: 1200px){
     div#containImg{
