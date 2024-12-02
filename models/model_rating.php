@@ -78,7 +78,7 @@ class ModelRating{
             $req->bindParam(1,$dateNote,PDO::PARAM_STR);
             $req->bindParam(2,$note,PDO::PARAM_INT);
             $req->bindParam(3,$idPage,PDO::PARAM_INT);
-            $req->bindParam(4,$idCommentateur,PDO::PARAM_INT);
+            $req->bindParam(4,$idNoteur,PDO::PARAM_INT);
 
             //4ème étape : executer la requête
             $req->execute();
