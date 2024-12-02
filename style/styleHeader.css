@@ -28,7 +28,7 @@ a, p{
 }
 
 .displayNone{
-    display : none;
+    display : none !important;
 }
 
 .navMenu{
