@@ -44,21 +44,23 @@
                 <label for="star1" title="1 étoile"><i class="fa-solid fa-star" ></i></label>
             </div>
             <form action="" method="post" id="selectedStar">
-            <input id="numberOfStars" type="text" name="numberOfStars">
-            <input type="submit" name="Noter"
+            <input id="nombreEtoiles" type="text" name="nombreEtoiles"/>
+            <input type="submit" name="Noter" value="Noter"/>
             </form>
+            <p>'.$messageRating.'</p>
             ';
         }else{
             echo "Veuillez vous connecter pour beneficier de cette fonctionnalité";
         }
-        ?>        
+        ?>    
         <h3>Commentez</h3>
         <?php if(isset($_SESSION['id_user'])){
             echo '<form action="" method="post">
                 <label for="newComment">Nouveau Commentaire</label>
                 <textarea name="contenuCommentaire" id="newComment"></textarea>
                 <input type="submit" name="Poster">
-            </form>';
+            </form>
+            <p>'.$messageComment.'</p>';
         }else{
             echo "Veuillez vous connecter pour beneficier de cette fonctionnalité";
         }
