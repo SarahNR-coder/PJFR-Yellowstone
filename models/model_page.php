@@ -4,10 +4,11 @@ class ModelPage{
     //Attributs
     private ?int $idPage;
     private ?string $nomPage;
+    private ?string $adressePage;
 
     //Constructeur
-    public function __construct(?string $nomPage){
-        $this->nomPage = $nomPage;
+    public function __construct(?string $adressePage){
+        $this->adressePage = $adressePage;
     }
 
     //Getter et Setters
@@ -24,25 +25,34 @@ class ModelPage{
         return $this->nomPage;
     }
     
-    public function setIdNomPage(?string $nomPage): ModelPage{
+    public function setNomPage(?string $nomPage): ModelPage{
         $this->nomPage = $nomPage;
         return $this;
     }
 
-    public function getPageIdFromName():array|string{
-         //1Er Etape : Instancier l'objet de connexion PDO
-        $bdd = new PDO('mysql:host=localhost;dbname=yellowstone','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    public function getAdressePage(): ?string{
+        return $this->adressePage;
+    }
+    
+    public function setAdressePage(?string $adressePage): ModelPage{
+        $this->adressePage = $adressePage;
+        return $this;
+    }
 
-        //Récupération de $nom_page depuis l'objet
-        $nomPage = $this->getNomPage();
+    public function getPageIdFromAddress():array|string{
+         //1Er Etape : Instancier l'objet de connexion PDO
+        $bdd = new PDO('mysql:host=localhost;dbname=yellowstone2','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+
+        //Récupération de $adresse_page depuis l'objet
+        $adressePage = $this->getAdressePage();
 
         //Try...Catch
         try{
             //2nd Etape : préparer ma requête SELECT
-            $req = $bdd->prepare('SELECT id_page FROM page_site WHERE nom_page = ?');
+            $req = $bdd->prepare('SELECT id_page FROM page_site WHERE adresse_page = ?');
 
              //3eme Etape : Binding de Paramètre pour relier chaque ? à sa donnée
-            $req->bindParam(1,$nomPage,PDO::PARAM_STR);
+            $req->bindParam(1,$adressePage,PDO::PARAM_STR);
 
             //4eme Etape : exécution de la requête
             $req->execute();
