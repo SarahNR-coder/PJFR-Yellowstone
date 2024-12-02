@@ -25,7 +25,34 @@
     </section>
     <section id="comments">
         <h2 class="subtitle">COMMENTAIRES</h2>
-        <h3>Commentez<h3>
+        <h3>Notez</h3>
+        <?php if(isset($_SESSION['id_user'])){
+            echo '<div class="rating">
+                <input type="radio" id="star5" name="rating" value="5" />
+                <label for="star5" title="5 étoiles"><i class="fa-solid fa-star"></i></label>
+
+                <input type="radio" id="star4" name="rating" value="4" />
+                <label for="star4" title="4 étoiles"><i class="fa-solid fa-star"></i></label>
+
+                <input type="radio" id="star3" name="rating" value="3" />
+                <label for="star3" title="3 étoiles"><i class="fa-solid fa-star" ></i></label>
+
+                <input type="radio" id="star2" name="rating" value="2" />
+                <label for="star2" title="2 étoiles"><i class="fa-solid fa-star" ></i></label>
+
+                <input type="radio" id="star1" name="rating" value="1" />
+                <label for="star1" title="1 étoile"><i class="fa-solid fa-star" ></i></label>
+            </div>
+            <form action="" method="post" id="selectedStar">
+            <input id="numberOfStars" type="text" name="numberOfStars">
+            <input type="submit" name="Noter"
+            </form>
+            ';
+        }else{
+            echo "Veuillez vous connecter pour beneficier de cette fonctionnalité";
+        }
+        ?>        
+        <h3>Commentez</h3>
         <?php if(isset($_SESSION['id_user'])){
             echo '<form action="" method="post">
                 <label for="newComment">Nouveau Commentaire</label>
@@ -36,6 +63,8 @@
             echo "Veuillez vous connecter pour beneficier de cette fonctionnalité";
         }
         ?>
+        <h3>Notes des visiteurs</h3>
+        <?php echo $listRatings ?>
         <h3>Commentaires des visiteurs<h3>
         <?php echo $listComments ?>
     </section>
