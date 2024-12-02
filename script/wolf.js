@@ -1,11 +1,11 @@
 
 
 const ratingInputs = document.querySelectorAll('.rating input');
-const selectedStar = document.querySelector('#selectedStar');
+const numberOfStars = document.querySelector('#nombreEtoiles');
   ratingInputs.forEach(input => {
     input.addEventListener('change', () => {
-      console.log(`Note sélectionnée : ${input.value} étoiles`)
-      selectedStar.innerText = input.value;
+      numberOfStars.value = input.value;
+      console.log(`numberOfStars.value : ${numberOfStars.value} `)
     });
 });
 
