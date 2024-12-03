@@ -105,8 +105,9 @@ section#comments{
 }
 
 .rating {
-    display: inline-flex;
-    direction:rtl;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
     margin: 2vw 4vw;
 }
 
