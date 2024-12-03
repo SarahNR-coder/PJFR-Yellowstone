@@ -2,6 +2,9 @@
         <h1 id="title">Mon Compte</h1>
         <section id="infosUtilisateur">
         <h2 class="secondBestTitle">Mes Informations</h2>
+            <div id="imgProfil">
+                <img src="./img/image_profil_defaut.webp" alt="image de profil par défaut">
+            </div>
             <div id="infosBasiques">
                 <p><span>Nom : </span><span class="info"><?php echo $nameUser ?></span></p>
                 <p><span>Prénom : </span><span class="info"><?php echo $firstnameUser ?></span></p>
