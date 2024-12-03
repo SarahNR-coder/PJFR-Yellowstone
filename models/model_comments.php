@@ -101,7 +101,7 @@ class ModelComment{
         //Try...Catch
         try{
             //2nd Etape : préparer ma requête SELECT
-            $req = $bdd->prepare('SELECT date_commentaire, contenu_commentaire, id_page, id_commentateur, nom_page FROM commentaire INNER JOIN page_site ON commentaire.id_page = page_site.id_page WHERE id_commentateur = ?');
+            $req = $bdd->prepare('SELECT date_commentaire, contenu_commentaire, commentaire.id_page, id_commentateur, nom_page FROM commentaire INNER JOIN page_site ON commentaire.id_page = page_site.id_page WHERE id_commentateur = ?');
 
             //3eme Etape : Binding de Paramètre pour relier chaque ? à sa donnée
             $req->bindParam(1,$idCommentateur,PDO::PARAM_INT);
