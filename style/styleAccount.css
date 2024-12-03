@@ -24,6 +24,7 @@ main{
 #infosUtilisateur{
     display:flex;
     flex-direction:column;
+    position: relative;
 }
 
 .secondBestTitle{
@@ -34,10 +35,23 @@ main{
     margin:0 auto;
 }
 
+#imgProfil{
+    width:20vw;
+    height:20vw;
+    position:absolute;
+    left: 4vw;
+    top: 4vw;
+    z-index:-1;
+
+    img{
+        width:100%;
+    }
+}
+
 #infosBasiques{
     padding: 0 2vw;
-    width: 70%;
-    margin: 2vw auto;
+    width: 60%;
+    margin: 2vw 0 2vw 19vw;
 
     p{
         background-color: #69584f;
@@ -46,7 +60,7 @@ main{
         margin:1vw;
         display:flex;
         justify-content: space-between;
-        
+
     }
 }
 
@@ -54,3 +68,45 @@ main{
     color: white;
 }
 
+.cardComment {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.commentInfos {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contenuCommentaire {
+    border: 2px solid #9FA290;
+    width:80%;
+    padding: 2.5vw;
+}
+
+.cardRating {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ratingInfos {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ratingResults {
+    width : 80%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content:center;
+    border: 2px solid #4B4F40;
+    padding: 2.5vw 0;
+}
