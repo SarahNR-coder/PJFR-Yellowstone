@@ -39,8 +39,8 @@ main{
     width:20vw;
     height:20vw;
     position:absolute;
-    left: 4vw;
-    top: 4vw;
+    left: 8%;
+    top: 14%;
     z-index:-1;
 
     img{
@@ -51,7 +51,7 @@ main{
 #infosBasiques{
     padding: 0 2vw;
     width: 60%;
-    margin: 2vw 0 2vw 19vw;
+    margin: 4% 0 4% 39%;
 
     p{
         background-color: #69584f;
