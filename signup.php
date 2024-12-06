@@ -33,31 +33,19 @@ function dataTestInscription(){
     return ["pseudo"=>$pseudo, "email" => $email, "password" => $password, "erreur" => ''];
 }
 
-//Procéder à l'inscription
-
-    //Test envoi formulaire inscription
-    if(isset($_POST['Inscription'])){
-        //test données d'inscription
-        $tab=dataTestInscription();
-
-        //test paramètre erreur pas vide càd erreur on ne récupère pas les données formulaire
-        if($tab['erreur'] != ''){
+//Procéder à l'inscription  
+    if(isset($_POST['Inscription'])){                   //Test envoi formulaire inscription      
+        $tab=dataTestInscription();                     //test données d'inscription
+        if($tab['erreur'] != ''){                       //si une erreur on ne récupère pas les données formulaire
             $message = $tab['erreur'];
         }else{
-            $user = new ModelUser($tab['email']);
-            //nouvel objet de ModelUser correspondant au email soumis
+            $user = new ModelUser($tab['email']);       //nouvel objet de ModelUser correspondant au email soumis
+            $user->setPseudo($tab['pseudo'])->setMotDePasse($tab['password']);     //règle les autres attributs de cet objet
 
-            //règle les autres attributs de cet objet
-            $user->setPseudo($tab['pseudo'])->setMotDePasse($tab['password']);
-
-            if(empty($user->readUserByEmail())){
-                //pas d'utilisateur avec cet email dans la bdd
-                $message = $user->addUser();
-                //enregistre l'utilisateur en base de données
-                $_SESSION['justSignedIn'] = true;
-                //défini que l'utilisateur vient de s'inscrire
-            }else{
-                //il y a un utilisateur avec email en bdd
+            if(empty($user->readUserByEmail())){        //dans if: pas d'utilisateur avec cet email dans la bdd
+                $message = $user->addUser();            //enregistre l'utilisateur en base de données
+                $_SESSION['justSignedIn'] = true;       //défini que l'utilisateur vient de s'inscrire
+            }else{                                      //dans else: il y a un utilisateur avec email en bdd
                 $message="Cet Email existe déjà en BDD !";
             }}}
 

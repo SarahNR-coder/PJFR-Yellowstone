@@ -130,8 +130,7 @@ class ModelUser{
         //1ere Etape : instancier l'objet de connexion PDO
         $bdd = new PDO("mysql:host=127.0.0.1;dbname=yellowstone2", 'root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
-        //Récupération du pseudo depuis l'objet
-        $email=$this->email;
+        $email=$this->email;        //Récupération du pseudo depuis l'objet
 
         //Try..Catch
         try{
