@@ -57,24 +57,24 @@ form{
   }
 }
 
-.error-line{
-display: none;
-}
-
 .parent-message{
 margin: 0 auto;
 width: 80%;
-  p{
-    display: block;
-    padding-bottom: 3%;
-    text-align: center;
-  }
 }
 
-#form-no-valid{
-display: none;
+#errSubmitMssg{
+  display: block;
+  text-align: center;
+  background-color:red;
+  color:white;
+  font-weight:bold;
+  font-size:15.5px;
+  border-radius:4.5px;
+  border:1px solid white;
+  padding-top:7px;
+  padding-bottom: 3%;
+  box-shadow: 3px 3px 3px black
 }
-
 
 @media screen and (max-width: 500px){
   form{

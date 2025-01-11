@@ -43,11 +43,15 @@ function dataTestInscription(){
             $user->setPseudo($tab['pseudo'])->setMotDePasse($tab['password']);     //règle les autres attributs de cet objet
 
             if(empty($user->readUserByEmail())){        //dans if: pas d'utilisateur avec cet email dans la bdd
-                $message = $user->addUser();            //enregistre l'utilisateur en base de données
                 $_SESSION['justSignedIn'] = true;       //défini que l'utilisateur vient de s'inscrire
+                $message = $user->addUser();            //enregistre l'utilisateur en base de données
+
             }else{                                      //dans else: il y a un utilisateur avec email en bdd
                 $message="Cet Email existe déjà en BDD !";
-            }}}
+            }
+        }
+        return $message;
+    }
 
 //Effets de l'inscription
     if(isset($_SESSION['justSignedIn'])){
@@ -57,8 +61,15 @@ function dataTestInscription(){
         }
     }
 
+function errSubmit(){
+    if($message !=""){
+        echo "<p id='errSubmitMssg'>{$message}</p>";
+    }
+}
+
+
 include './views/view_header.php';
-include './views/view_signup.php';
+include './views/view_signup2.php';
 include './views/view_footer.php';
 
 ?>
