@@ -7,13 +7,13 @@ let toggleTable = Array.from(toggleHtmlElements);
 let isDisplayed = false;
 hamburgerIconElement.addEventListener("click", function(){
     if(isDisplayed === true){
-        toggleTable.map((element)=>{
+        toggleTable.forEach((element)=>{
             element.style.display = "none";
         });
             mainSectionElement.style.marginTop = "0";
 
     }else{
-        toggleTable.map((element)=>{
+        toggleTable.forEach((element)=>{
             element.style.display = "block";
         });
         mainSectionElement.style.marginTop = "18vw"; 
@@ -25,16 +25,16 @@ hamburgerIconElement.addEventListener("click", function(){
 window.addEventListener("resize", function(){
     if(window.innerWidth <= 800){
         if(isDisplayed === true){
-            toggleTable.map((element)=>{
+            toggleTable.forEach((element)=>{
                 element.style.display = "block";
             })
         }else{
-            toggleTable.map((element)=>{
+            toggleTable.forEach((element)=>{
                 element.style.display = "none";
             })
         }
     }else{
-        toggleTable.map((element)=>{
+        toggleTable.forEach((element)=>{
             element.style.display = "block";
         })
         isDisplayed = false;

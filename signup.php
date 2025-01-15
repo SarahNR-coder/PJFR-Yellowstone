@@ -62,8 +62,10 @@ function dataTestInscription(){
     }
 
 function errSubmit(){
-    if($message !=""){
-        echo "<p id='errSubmitMssg'>{$message}</p>";
+    if(isset($message)){
+        if($message !=""){
+            echo "<p id='errSubmitMssg'>{$message}</p>";
+        }
     }
 }
 
