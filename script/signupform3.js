@@ -241,3 +241,7 @@ function checkingConfirmationPwd(){
         }
     }
 }
+
+if(document.querySelector('p#errSubmitMssg')){
+    document.querySelector(form).addEventListener('submit', (e)=>{e.preventDefault()});
+}

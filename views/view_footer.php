@@ -2,8 +2,7 @@
         <a href="#">Réseaux sociaux</a>
         <a href="#">Nous contacter</a>
         <a href="#">Mentions légales</a>
-        <!-- <script src="./script/signupform2.js"></script>   -->
-        <script src="./script/signupform3.js"></script>
+        <?php echo ($current_page == 'signup.php' )? '<script src="./script/signupform3.js"></script>' : ''; ?>
         
     </footer>
 </body>

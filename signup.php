@@ -10,18 +10,19 @@ $message = "";
 $visibleConnectedUser = "displayNone";
 $visibleUnconnectedUser ="toggleElt";
 $current_page = basename($_SERVER['PHP_SELF']);
+$_SESSION['justSignedIn'] = false;
 
 //Fonction pour tester les données du formulaire d'inscription
 function dataTestInscription(){
     //1ere étape : vérifier si les champs obligatoires sont vides
-    if(empty($_POST["pseudo"]) || empty($_POST["email"]) || empty($_POST["password-one"]) || empty($_POST["password-two"])){
+    if(empty($_POST["pseudo"]) || empty($_POST["email"]) || empty($_POST["originalPwd"]) || empty($_POST["confirmationPwd"])){
         return ["pseudo"=>'', "email" => '', "password" => '', "erreur" => 'Veuillez remplir tous les champs!'];
     }
 
     //2nd étape : nettoyer les données
     $pseudo= sanitize($_POST["pseudo"]);
     $email= sanitize($_POST["email"]);
-    $password= sanitize($_POST["password-one"]);
+    $password= sanitize($_POST["originalPwd"]);
 
     //3eme étape de sécurité : Vérifier que les données sont au bon format
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
@@ -45,33 +46,18 @@ function dataTestInscription(){
             if(empty($user->readUserByEmail())){        //dans if: pas d'utilisateur avec cet email dans la bdd
                 $_SESSION['justSignedIn'] = true;       //défini que l'utilisateur vient de s'inscrire
                 $message = $user->addUser();            //enregistre l'utilisateur en base de données
+                header('Location:signin.php');
 
             }else{                                      //dans else: il y a un utilisateur avec email en bdd
                 $message="Cet Email existe déjà en BDD !";
             }
         }
-        return $message;
     }
 
-//Effets de l'inscription
-    if(isset($_SESSION['justSignedIn'])){
-        if($_SESSION['justSignedIn'] === true){
-            //Je redirige vers la page de connexion
-            header('Location:signin.php'); 
-        }
-    }
-
-function errSubmit(){
-    if(isset($message)){
-        if($message !=""){
-            echo "<p id='errSubmitMssg'>{$message}</p>";
-        }
-    }
-}
 
 
 include './views/view_header.php';
-include './views/view_signup2.php';
+include './views/view_signup.php';
 include './views/view_footer.php';
 
 ?>
