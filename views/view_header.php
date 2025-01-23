@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./style/styleHeader.css">
     <link rel="stylesheet" href="./style/styleFooter.css">
     <link rel="stylesheet" href="./style/active.css">
-    <script src="./script/header2.js" defer></script>
+    <script src="./script/header.js" defer></script>
     <?php echo ($current_page == 'index.php' )? '<link rel="stylesheet" href="./style/styleHome.css">' : ''; ?>
     <?php echo ($current_page == 'signin.php' || $current_page == 'signup.php')? '<link rel="stylesheet" href="./style/styleForms.css">' : ''; ?>
     <?php echo ($current_page == 'wolf.php')? '<link rel="stylesheet" href="./style/styleWolf.css">' : ''; ?>

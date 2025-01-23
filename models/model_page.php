@@ -41,7 +41,7 @@ class ModelPage{
 
     public function getPageIdFromAddress():array|string{
          //1Er Etape : Instancier l'objet de connexion PDO
-        $bdd = new PDO('mysql:host=localhost;dbname=yellowstone2','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $bdd = new PDO('mysql:host=localhost;dbname=yellowstone','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
         //Récupération de $adresse_page depuis l'objet
         $adressePage = $this->getAdressePage();

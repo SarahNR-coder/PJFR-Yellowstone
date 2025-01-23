@@ -62,7 +62,7 @@ class ModelComment{
 
     function addComment():string{
         //1ere étape intancier l'objet de connexion PDO
-        $bdd= new PDO("mysql:host=127.0.0.1;dbname=yellowstone2","root","",array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+        $bdd= new PDO("mysql:host=127.0.0.1;dbname=yellowstone","root","",array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
 
         //Récupération des données de l'objet
         $dateCommentaire = $this->getDateCommentaire();
@@ -96,7 +96,7 @@ class ModelComment{
 
     public function readCommentsByUser(?int $idCommentateur):array | string{
         //1Er Etape : Instancier l'objet de connexion PDO
-        $bdd = new PDO('mysql:host=localhost;dbname=yellowstone2','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $bdd = new PDO('mysql:host=localhost;dbname=yellowstone','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
         //Try...Catch
         try{
@@ -119,7 +119,7 @@ class ModelComment{
 
     public function readCommentsByPage(?int $idPage):array | string{
         //1Er Etape : Instancier l'objet de connexion PDO
-        $bdd = new PDO('mysql:host=localhost;dbname=yellowstone2','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $bdd = new PDO('mysql:host=localhost;dbname=yellowstone','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
         //Try...Catch
         try{

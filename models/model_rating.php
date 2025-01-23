@@ -62,7 +62,7 @@ class ModelRating{
 
     function addRating():string{
         //1ere étape intancier l'objet de connexion PDO
-        $bdd= new PDO("mysql:host=127.0.0.1;dbname=yellowstone2","root","",array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+        $bdd= new PDO("mysql:host=127.0.0.1;dbname=yellowstone","root","",array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
 
         //Récupération des données de l'objet
         $dateNote = $this->getDateNote();
@@ -96,7 +96,7 @@ class ModelRating{
 
     public function readRatingsByUser(?int $idNoteur):array | string{
         //1Er Etape : Instancier l'objet de connexion PDO
-        $bdd = new PDO('mysql:host=localhost;dbname=yellowstone2','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $bdd = new PDO('mysql:host=localhost;dbname=yellowstone','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
         //Try...Catch
         try{
@@ -119,7 +119,7 @@ class ModelRating{
 
     public function readRatingsByPage(?int $idPage):array | string{
         //1Er Etape : Instancier l'objet de connexion PDO
-        $bdd = new PDO('mysql:host=localhost;dbname=yellowstone2','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $bdd = new PDO('mysql:host=localhost;dbname=yellowstone','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
         //Try...Catch
         try{
